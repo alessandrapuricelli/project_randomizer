@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:200,500');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+
+    /* font-family: 'Libre Barcode 39', cursive; */
+
+    /*font-family: 'IBM Plex Mono', monospace;/*
+    /*font-family: 'Archivo Black', sans-serif;*/
+    font-family: 'Chivo', sans-serif;
+
+    font-weight: 400;
+    color: blueviolet;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 1fr 3fr repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    grid-template-areas: "title" "setting" "time" "break" "button";
+    width: 100%;
+    height: 100vh;
+
+
+}
+/* qui cambi le impostazioni per i titolo */
+.title {
+    grid-area: title;
+
+    background-color: blueviolet;
+    font-weight: 400;
+    color: greenyellow
+    /*font-size: 1.5rem;*/
+}
+
+.setting {
+    grid-area: setting;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 200px repeat(3, 1fr);
+    grid-template-areas: "cat 1 1 1" "cat 2 2 2" "cat 3 3 3";
+
+    /*font-family: 'Poppins', sans-serif;*/
+    background-color:lightgray;
+    border-top: solid 2px blueviolet;
+}
+
+.time {
+    grid-area: time;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 200px repeat(3, 1fr);
+    grid-template-areas: "cat 1 1 1";
+
+
+    background-color:lightgray;
+    border-top: solid 2px blueviolet;
+}
+
+.break {
+    grid-area: break;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 200px repeat(3, 1fr);
+    grid-template-areas: "cat 1 1 1";
+
+
+    /*border-top: solid 2px blueviolet;*/
+    background-color:lightgray;
+}
+
+.start {
+    grid-area: button;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 200px repeat(2, 1fr);
+    grid-template-areas: "cat 1 1 ";
+
+
+    background-color:lightgray;
+    border-top: solid 2px blueviolet;
+}
+
+/* align all element to the center */
+
+div[class*='setting-'], .btn, .category, .title, .radio {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
+}
+
+.setting-cat {
+    grid-area: cat;
+}
+
+.setting-1 {
+    grid-area: 1;
+}
+
+.setting-2 {
+    grid-area: 2;
+}
+
+.setting-3 {
+    grid-area: 3;
+}
+
+
+.btn {
+    width: 85%;
+    height: auto;
+    min-height: 50px;
+    text-align: center;
+    border: solid 2px blueviolet;
+    border-radius: 25px;
+}
+
+
+.btn .radio {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+    /* border: solid 2px blueviolet; */
+    border-radius: 25px;
+}
+
+
+.radio:hover, .btn:hover {
+    /* cursor: pointer; */
+    cursor: url(cursor_manina.png), pointer;
+    background-color:white;
+    /*color: orangered;*/
+}
+
+.btn input[type=radio] {
+    display: none;
+}
+
+.btn input[type=radio]:checked+.radio {
+    background-color: greenyellow;
+}
+
+.category {
+    width: 90%;
+    height: auto;
+    min-height: 50px;
+
+
+    background-color:lightgray;
+    text-align: center;
+
+}
+
+.timer {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    min-width: 500px;
+    height: auto;
+    /*height: auto;*/
+    transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    background-color:greenyellow;
+    border: solid 15px orangered;
+    border-radius: 80px;
+    color: orangered;
+}
+
+.timer p {
+    text-align: center;
+    /* font-size: 3.5rem; */
+    color:orangered;
+}
+#timer-min{
+    font-size: 10rem;
+    padding: 4rem;
+    font-weight: 400;
+    color:orangered;
+}
