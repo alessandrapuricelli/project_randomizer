@@ -19,7 +19,7 @@ body {
     font-family: 'Chivo', sans-serif;
 
     font-weight: 400;
-    color: black;
+    color: blueviolet;
     text-align: center;
     font-size: 1.1rem;
 }
@@ -38,7 +38,7 @@ body {
 .title {
     grid-area: title;
 
-    background-color: black;
+    background-color: blueviolet;
     font-weight: 400;
     color: white
     /*font-size: 1.5rem;*/
@@ -52,7 +52,7 @@ body {
     grid-template-areas: "cat 1 1 1" "cat 2 2 2" "cat 3 3 3";
 
     /*font-family: 'Poppins', sans-serif;*/
-    background-color:lightgray;
+    background-color:paleturquoise;
     border-top: solid 2px red;
 }
 
@@ -64,7 +64,7 @@ body {
     grid-template-areas: "cat 1 1 1";
 
 
-    background-color:pink;
+    background-color:paleturquoise;
     border-top: solid 2px red;
 }
 
@@ -77,7 +77,7 @@ body {
 
 
     /*border-top: solid 2px blueviolet;*/
-    background-color:lightgray;
+    background-color:paleturquoise;
 }
 
 .start {
@@ -88,7 +88,7 @@ body {
     grid-template-areas: "cat 1 1 ";
 
 
-    background-color:lightgray;
+    background-color:paleturquoise;
     border-top: solid 2px red;
 }
 
@@ -125,7 +125,7 @@ div[class*='setting-'], .btn, .category, .title, .radio {
     height: auto;
     min-height: 50px;
     text-align: center;
-    border: solid 2px black;
+    border: solid 2px blueviolet;
     border-radius: 25px;
 }
 
@@ -152,7 +152,7 @@ div[class*='setting-'], .btn, .category, .title, .radio {
 }
 
 .btn input[type=radio]:checked+.radio {
-    background-color: white;
+    background-color: pink;
 }
 
 .category {
@@ -161,7 +161,7 @@ div[class*='setting-'], .btn, .category, .title, .radio {
     min-height: 50px;
 
 
-    background-color:lightgray;
+    background-color:paleturquoise;
     text-align: center;
 
 }
@@ -179,20 +179,20 @@ div[class*='setting-'], .btn, .category, .title, .radio {
     -moz-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
-    background-color:red;
-    border: solid 2px black;
+    background-color:palegreen;
+    border: solid 2px orange;
     border-radius: 80px;
-    color: black;
+    color: orange;
 }
 
 .timer p {
     text-align: center;
     /* font-size: 3.5rem; */
-    color:black;
+    color:orange;
 }
 #timer-min{
     font-size: 5rem;
     padding: 4rem;
     font-weight: 400;
-    color:black;
+    color:orange;
 }
