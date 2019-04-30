@@ -2,7 +2,7 @@ let timer;
 
 const museums = ["PIZZA DAY @ HGK Mensa", "NEW VEGAN MENU @ HGK Mensa", "FREE CAKES @ Atelier Mensa", "CHRISTMAS MARKET 2020"]
 const public_institutions = ["CONCERT @ H3K", "CONCERT @ HGK COURTYARD ", "new POSTER SLAM exhibition", "OPEN HOUSE 2020"]
-const music_bands = ["GRADUATION DAY 2020", "MASTER WORKSHOPS 2020", "STUDIO TALKS 2020 @ HGK", "SUMMER WORKSHOPS 2020"]
+const music_bands = ["GRADUATION DAY 2020", "MASTER WORKSHOPS 2020", "LECTURE SERIES 2020 @ HGK", "SUMMER WORKSHOPS 2020"]
 
 const institutions = [museums, public_institutions, music_bands]
 
