@@ -1,10 +1,10 @@
 let timer;
 
-const museums = ["Wong Ping: Golden Shower @ KUNSTHALLE BASEL", "Lizzie Fitch + Ryan Trecartin: Whether Line @ FONDAZIONE PRADA", "Wagner + De Burca: You Are Seeing Things @ STEDELIJK"]
-const public_institutions = ["THE SMALL PUBLISHERS FAIR, London", "SYDNEY DESIGN FESTIVAL", "GENDERED SPACE AND CLIMATE RESILIENCE IN INFORMAL SETTLEMENTS, Basel"]
-const music_bands = ["HAROLD PINTER: MEMORY PLAY", "ORANGE + YELLOW: JEAN CASTEL", "NOISE GATE: GIANT SWAN & S S S S @ H3K Basel"]
+const art = ["Wong Ping: Golden Shower @ KUNSTHALLE BASEL", "Lizzie Fitch + Ryan Trecartin: Whether Line @ FONDAZIONE PRADA", "Wagner + De Burca: You Are Seeing Things @ STEDELIJK"]
+const fashion = ["BALENCIAGA A/W 2020", "PRADA A/W 2020", "KENZO A/W 2020"]
+const music = ["BLOOD ORANGE 2020 TOUR", "ORANGE + YELLOW: JEAN CASTEL", "NOISE GATE: GIANT SWAN & S S S S @ H3K Basel"]
 
-const institutions = [museums, public_institutions, music_bands]
+const institutions = [art, fashion, music]
 
 function init() {
   clearInterval(timer);
