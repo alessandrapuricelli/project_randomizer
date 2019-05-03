@@ -1,8 +1,8 @@
 let timer;
 
 const art = ["Wong Ping: Golden Shower @ KUNSTHALLE BASEL", "Lizzie Fitch + Ryan Trecartin: Whether Line @ FONDAZIONE PRADA", "Wagner + De Burca: You Are Seeing Things @ STEDELIJK"]
-const fashion = ["BALENCIAGA A/W 2020", "PRADA A/W 2020", "KENZO A/W 2020"]
-const music = ["BLOOD ORANGE 2020 TOUR", "ORANGE + YELLOW: JEAN CASTEL", "NOISE GATE: GIANT SWAN & S S S S @ H3K Basel"]
+const fashion = ["BALENCIAGA F/W 2020", "PRADA F/W 2020", "GANNI F/W 2020"]
+const music = ["BLOOD ORANGE 2020 TOUR", "SALUT C'EST COOL CONCERT", "NOISE GATE: GIANT SWAN & S S S S @ H3K Basel"]
 
 const institutions = [art, fashion, music]
 
