@@ -1,8 +1,8 @@
 let timer;
 
-const museums = ["PIZZA DAY @ HGK Mensa", "NEW VEGAN MENU @ HGK Mensa", "FREE CAKES @ Atelier Mensa", "CHRISTMAS MARKET 2020"]
-const public_institutions = ["CONCERT @ H3K", "CONCERT @ HGK COURTYARD ", "new POSTER SLAM exhibition", "OPEN HOUSE 2020"]
-const music_bands = ["GRADUATION DAY 2020", "MASTER WORKSHOPS 2020", "LECTURE SERIES 2020 @ HGK", "SUMMER WORKSHOPS 2020"]
+const museums = ["Wong Ping: Golden Shower @ KUNSTHALLE BASEL", "Lizzie Fitch + Ryan Trecartin: Whether Line @ FONDAZIONE PRADA", "Wagner + De Burca: You Are Seeing Things @ STEDELIJK"]
+const public_institutions = ["THE SMALL PUBLISHERS FAIR, London", "SYDNEY DESIGN FESTIVAL", "GENDERED SPACE AND CLIMATE RESILIENCE IN INFORMAL SETTLEMENTS, Basel"]
+const music_bands = ["HAROLD PINTER: MEMORY PLAY", "ORANGE + YELLOW: JEAN CASTEL", "NOISE GATE: GIANT SWAN & S S S S @ H3K Basel"]
 
 const institutions = [museums, public_institutions, music_bands]
 
