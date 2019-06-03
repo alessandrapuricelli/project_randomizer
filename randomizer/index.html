@@ -6,169 +6,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>project randomizer</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="js/libs/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="../style.css">
+  <script src="../js/libs/jquery-3.3.1.min.js"></script>
 
 
 </head>
 
 <body>
+
   <div class="container">
-    <div class="title">
-      <p>! P R O J E C T R A N D O M I Z E R ! ! P R O J E C T R A N D O M I Z E R ! ! P R O J E C T R A N D O M I Z E R ! <br>
-        <i>(CHOOSE YOUR FAVOURITE WORK CONDITIONS AND START TO DESIGN YOUR NEXT PROJECT)</i></p>
+    <div class="head">
+      <a href="/index.html">! P R O J E C T R A N D O M I Z E R ! ! P R O J E C T R A N D O M I Z E R ! ! P R O J E C T
+        R A N D O M I Z E R !</a>
     </div>
 
-    <div class="setting" id="setting">
-      <div class="setting-cat">
-        <div class="category">
-          💰CLIENT💰<br><br>
-          📄FORMAT📄<br><br>
-          🎨STYLE 🎨
-        </div>
+    <div class="main">
+      <div class="info" id="info"></div>
+      <div class="timer" >
+        <div class="center-item" id="timer"></div>
       </div>
-      <div class="setting-1">
-        <div class="btn">
-          <input type="radio" name="s1" value="1" id="s1r1" />
-          <label class="radio" for="s1r1"></label>
-        </div>
+      <div class="btn c1r4 center-item" id="money">
+        $
       </div>
-      <div class="setting-1">
-        <div class="btn">
-          <input type="radio" name="s1" value="2" id="s1r2" />
-          <label class="radio" for="s1r2"></label>
-        </div>
+
+      <div class="btn c2r4 center-item">
+        <a href="/settings/index.html">RESET</a>
       </div>
-      <div class="setting-1">
-        <div class="btn">
-          <input type="radio" name="s1" value="2" id="s1r3" />
-          <label class="radio" for="s1r3"></label>
-        </div>
-      </div>
-      <div class="setting-2">
-        <div class="btn">
-          <input type="radio" name="s2" value="2" id="s2r1" />
-          <label class="radio" for="s2r1">BOOK</label>
-        </div>
-      </div>
-      <div class="setting-2">
-        <div class="btn">
-          <input type="radio" name="s2" value="2" id="s2r2" />
-          <label class="radio" for="s2r2">LOGO</label></div>
-      </div>
-      <div class="setting-2">
-        <div class="btn">
-          <input type="radio" name="s2" value="2" id="s2r3" />
-          <label class="radio" for="s2r3">POSTER</label></div>
-      </div>
-      <div class="setting-3">
-        <div class="btn">
-          <input type="radio" name="s3" value="2" id="s3r1" />
-          <label class="radio" for="s3r1">ONLY TYPE</label>
-        </div>
-      </div>
-      <div class="setting-3">
-        <div class="btn">
-          <input type="radio" name="s3" value="2" id="s3r2" />
-          <label class="radio" for="s3r2">TYPE AND ILLUSTRATION</label>
-        </div>
-      </div>
-      <div class="setting-3">
-        <div class="btn">
-          <input type="radio" name="s3" value="2" id="s3r3" />
-          <label class="radio" for="s3r3">TYPE AND PICTURES</label>
-        </div>
+      <div class="btn c4r4 center-item">
+        <a href="/about/index.html">ABOUT</a>
       </div>
     </div>
 
 
-    <div class="time" id="time">
-      <div class="setting-cat">
-        <div class="category">
-          ⏳TIME⏳
-        </div>
-      </div>
-      <div class="setting-1">
-        <div class="btn" id="time-1">
-          <input type="radio" name="t1" value="2" id="t1r1" />
-          <label class="radio" for="t1r1">20 MIN</label>
-        </div>
-      </div>
-      <div class="setting-1">
-        <div class="btn" id="time-2">
-          <input type="radio" name="t1" value="2" id="t1r2" />
-          <label class="radio" for="t1r2">
-            45 MIN</label>
-        </div>
-      </div>
-      <div class="setting-1">
-        <div class="btn" id="time-3">
-          <input type="radio" name="t1" value="2" id="t1r3" />
-          <label class="radio" for="t1r3">
-            60 MIN</label>
-        </div>
-      </div>
+    <div class="foot">
+
+      <a href="/index.html">! P R O J E C T R A N D O M I Z E R ! ! P R O J E C T R A N D O M I Z E R ! ! P R O J E C
+        T
+        R A N D O M I Z E R !</a>
     </div>
 
 
-    <div class="break" id="break">
-      <div class="setting-cat">
-        <div class="category">☕️BREAK☕️</div>
-      </div>
-      <div class="setting-1">
-        <div class="btn">
-          <input type="radio" name="b1" value="2" id="b1r1" />
-          <label class="radio" for="b1r1">
-            5 MIN</label>
-        </div>
-      </div>
-      <div class="setting-1">
-        <div class="btn">
-          <input type="radio" name="b1" value="2" id="b1r2" />
-          <label class="radio" for="b1r2">
-            10 MIN</label>
-        </div>
-      </div>
-      <div class="setting-1">
-        <div class="btn">
-          <input type="radio" name="b1" value="2" id="b1r3" />
-          <label class="radio" for="b1r3">
-            15 MIN</label>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="start">
-      <div class="setting-cat">
-        <div class="category"></div>
-      </div>
-      <div class="setting-1">
-        <div class="btn" onclick="start()">
-          START
-        </div>
-      </div>
-      <div class="setting-1">
-        <div class="btn" onclick="set_random_settings()">
-          RANDOM
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="timer" id="timer">
-    <p>
-      <span id="timer-text"></span><br>
-      <span id="timer-min">0:00</span>
-    </p>
-    <div class="setting-1" style="margin-bottom: 2rem;">
-      <div class="btn" style="border: solid 2px orange;" onclick="init()">
-        RESET
-      </div>
-    </div>
-  </div>
-
-  <script src="js/script.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/randomizer.js"></script>
 </body>
 
 </html>

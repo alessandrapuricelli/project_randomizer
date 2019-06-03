@@ -8,6 +8,7 @@
   <title>project randomizer</title>
   <link rel="stylesheet" href="../style.css">
   <script src="../js/libs/jquery-3.3.1.min.js"></script>
+  <script src="../js/utils.js"></script>
 
 
 </head>
@@ -204,8 +205,8 @@ Y8a     a8P      88            88       88           88
         $
       </div>
 
-      <div class="btn c2r4 center-item filters">
-        START
+      <div class="btn c2r4 center-item filters" onclick="get_settings()">
+        <a href="/randomizer/index.html">START</a>
       </div>
 
       <div class="btn c3r4 center-item filters" onclick="randomize_settings(); set_initial_settings()">
