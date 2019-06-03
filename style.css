@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:200,500');
+/* @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:200,500'); */
+
+@font-face {
+    font-family: 'suisse';
+    src: url('font/SuisseIntl-Regular.otf');
+}
 
 * {
     box-sizing: border-box;
@@ -11,49 +16,149 @@ html {
 body {
     margin: 0px;
     padding: 0px;
-
     /* font-family: 'Libre Barcode 39', cursive; */
-
     /*font-family: 'IBM Plex Mono', monospace;/*
     /*font-family: 'Archivo Black', sans-serif;*/
-    font-family: 'Chivo', sans-serif;
-
+    font-family: 'suisse', Helvetica, sans-serif;
+    /* font-family: sans-serif; */
+    background-color: #ddd;
     font-weight: 400;
-    color: blueviolet;
-    text-align: center;
-    font-size: 1.1rem;
+    color: #000;
+    /* text-align: center; */
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .container {
     display: grid;
-    grid-template-rows: 1fr 3fr repeat(3, 1fr);
+    grid-template-rows: 50px 1fr 50px;
     grid-template-columns: 1fr;
-    grid-template-areas: "title" "setting" "time" "break" "button";
+    grid-template-areas: "head" "main" "foot";
     width: 100%;
     height: 100vh;
-
-
 }
-/* qui cambi le impostazioni per i titolo */
-.title {
-    grid-area: title;
 
-    background-color: blueviolet;
+/* qui cambi le impostazioni per il titolo */
+
+.head {
+    grid-area: head;
     font-weight: 400;
-    color: white
-    /*font-size: 1.5rem;*/
+    border-bottom: solid 2px #000;
+    /* color: white */
 }
 
-.setting {
-    grid-area: setting;
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: 200px repeat(3, 1fr);
-    grid-template-areas: "cat 1 1 1" "cat 2 2 2" "cat 3 3 3";
+.foot {
+    grid-area: foot;
+    border-top: solid 2px #000;
+}
 
-    /*font-family: 'Poppins', sans-serif;*/
-    background-color:whitesmoke;
-    border-top: solid 2px blueviolet;
+.head, .foot {
+    font-size: 0.75rem;
+}
+
+.main {
+    grid-area: main;
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* 
+to adress single cell of the main grid use the following 
+classes: they describe the position in the grid by column and row number
+*/
+
+.c1r4 {
+    grid-column: 1 / 2;
+    grid-row: 7 / 8;
+}
+
+.c2r4 {
+    grid-column: 2 / 3;
+    grid-row: 7 / 8;
+}
+
+.c3r4 {
+    grid-column: 3 / 4;
+    grid-row: 7 / 8;
+}
+
+.c4r4 {
+    grid-column: 4 / 5;
+    grid-row: 7 / 8;
+}
+
+.description {
+    grid-column: 1 / 3;
+    grid-row: 1 / 5;
+    background-color: bisque;
+    padding: 1rem;
+}
+
+.level {
+    z-index: 999999;
+    grid-column: 1 / 2;
+    grid-row: 1 / 8;
+    /* add background to cover start button */
+    /* background-color: aquamarine; */
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+}
+
+.filters {
+    visibility: collapse;
+}
+
+.about {}
+
+.settings {}
+
+.randomizer {}
+
+.setting-1, .setting-2, .setting-3, .setting-4, .setting-5, .setting-6 {
+    grid-column: 1 / 5;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "cat item1 item2 item3"
+}
+
+.setting-1{
+grid-row: 1 / 2;
+}
+.setting-2{
+grid-row: 2 / 3;
+}
+.setting-3{
+grid-row: 3 / 4;
+}
+.setting-4{
+grid-row: 4 / 5;
+}
+.setting-5{
+grid-row: 5 / 6;
+}
+.setting-6{
+grid-row: 6 / 7;
+}
+
+.item-1 {
+    grid-area: item1;
+}
+
+.item-2 {
+    grid-area: item2;
+}
+
+.item-3 {
+    grid-area: item3;
+}
+
+.setting-cat {
+    grid-area: cat;
 }
 
 .time {
@@ -62,9 +167,7 @@ body {
     grid-template-rows: 1fr;
     grid-template-columns: 200px repeat(3, 1fr);
     grid-template-areas: "cat 1 1 1";
-
-
-    background-color:whitesmoke;
+    background-color: whitesmoke;
     border-top: solid 2px blueviolet;
 }
 
@@ -74,10 +177,8 @@ body {
     grid-template-rows: 1fr;
     grid-template-columns: 200px repeat(3, 1fr);
     grid-template-areas: "cat 1 1 1";
-
-
     /*border-top: solid 2px blueviolet;*/
-    background-color:whitesmoke;
+    background-color: whitesmoke;
 }
 
 .start {
@@ -86,15 +187,13 @@ body {
     grid-template-rows: 1fr;
     grid-template-columns: 200px repeat(2, 1fr);
     grid-template-areas: "cat 1 1 ";
-
-
-    background-color:whitesmoke;
+    background-color: whitesmoke;
     border-top: solid 2px blueviolet;
 }
 
-/* align all element to the center */
+/* set item in the center of the div */
 
-div[class*='setting-'], .btn, .category, .title, .radio {
+.center-item {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -103,35 +202,18 @@ div[class*='setting-'], .btn, .category, .title, .radio {
     align-content: stretch;
 }
 
-.setting-cat {
-    grid-area: cat;
-}
-
-.setting-1 {
-    grid-area: 1;
-}
-
-.setting-2 {
-    grid-area: 2;
-}
-
-.setting-3 {
-    grid-area: 3;
-}
-
-
 .btn {
+    margin: auto;
     width: 85%;
     height: auto;
     min-height: 50px;
     text-align: center;
-    border: solid 2px blueviolet;
+    border: solid 2px #000;
     border-radius: 25px;
 }
 
-
 .btn .radio {
-    background-color: transparent;
+    /* background-color: transparent; */
     width: 100%;
     height: 100%;
     padding: 0.5rem;
@@ -139,12 +221,11 @@ div[class*='setting-'], .btn, .category, .title, .radio {
     border-radius: 25px;
 }
 
-
 .radio:hover, .btn:hover {
     cursor: pointer;
-    /* cursor: url(cursor_manina.png), pointer; */
-    background-color:lightgray;
-    /*color: orangered;*/
+    /* cursor: url(img/cursor_manina.png), pointer; */
+    /* background-color: lightgray; */
+    color: orangered;
 }
 
 .btn input[type=radio] {
@@ -152,18 +233,21 @@ div[class*='setting-'], .btn, .category, .title, .radio {
 }
 
 .btn input[type=radio]:checked+.radio {
-    background-color: lightgrey ;
+    /* 
+        qui setti come deve essere visualizzata una opzione selezionata
+    */
+    /* background-color: rgb(231, 19, 19); */
+    color: orangered;
+    /* text-decoration: underline 3px orangered */
+    text-shadow: #000 3px 3px 3px
 }
 
 .category {
     width: 90%;
     height: auto;
     min-height: 50px;
-
-
-    background-color:whitesmoke;
+    background-color: whitesmoke;
     text-align: center;
-
 }
 
 .timer {
@@ -179,7 +263,6 @@ div[class*='setting-'], .btn, .category, .title, .radio {
     -moz-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
-    background-color: blueviolet;
     border: solid 2px orange;
     border-radius: 80px;
     color: orange;
@@ -188,11 +271,12 @@ div[class*='setting-'], .btn, .category, .title, .radio {
 .timer p {
     text-align: center;
     /* font-size: 3.5rem; */
-    color:orange;
+    color: orange;
 }
-#timer-min{
+
+#timer-min {
     font-size: 5rem;
     padding: 4rem;
     font-weight: 400;
-    color:orange;
+    color: orange;
 }

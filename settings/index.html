@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>project randomizer</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="../js/libs/jquery-3.3.1.min.js"></script>
+
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="head">
+      <a href="/index.html">! P R O J E C T R A N D O M I Z E R ! ! P R O J E C T R A N D O M I Z E R ! ! P R O J E C T
+        R A N D O M I Z E R !</a>
+    </div>
+
+    <div class="main">
+      <div class="level">
+        <p class="center-item">
+          CHOOSE YOUR LEVEL:
+        </p>
+        <div class="btn center-item" onclick="go_to_settings(this)" data-level="beginner">BEGINNER</div>
+        <div class="btn center-item" onclick="go_to_settings(this)" data-level="intermediate">INTERMEDIATE</div>
+        <div class="btn center-item" onclick="go_to_settings(this)" data-level="expert">EXPERT</div>
+      </div>
+      <!-- hidden elements -->
+
+      <!--
+
+      888888888888  ,ad8888ba,    88888888ba   88    ,ad8888ba,
+           88      d8"'    `"8b   88      "8b  88   d8"'    `"8b
+           88     d8'        `8b  88      ,8P  88  d8'
+           88     88          88  88aaaaaa8P'  88  88
+           88     88          88  88""""""'    88  88
+           88     Y8,        ,8P  88           88  Y8,
+           88      Y8a.    .a8P   88           88   Y8a.    .a8P
+           88       `"Y8888Y"'    88           88    `"Y8888Y"'
+
+
+      -->
+
+      <div class="setting-1 filters" id="topic">
+        <p class="setting-cat center-item">TOPIC</p>
+        <div class="btn center-item item-1">
+          <input type="radio" name="s1" value="1" id="s1r1" />
+          <label class="radio" for="s1r1">1</label>
+        </div>
+        <div class="btn center-item item-2">
+          <input type="radio" name="s1" value="1" id="s1r2" />
+          <label class="radio" for="s1r2">2</label>
+        </div>
+        <div class="btn center-item item-3">
+          <input type="radio" name="s1" value="1" id="s1r3" />
+          <label class="radio" for="s1r3">3</label>
+        </div>
+      </div>
+      <!--
+
+888888888888  ,ad8888ba,      ,ad8888ba,    88           ad88888ba
+     88      d8"'    `"8b    d8"'    `"8b   88          d8"     "8b
+     88     d8'        `8b  d8'        `8b  88          Y8,
+     88     88          88  88          88  88          `Y8aaaaa,
+     88     88          88  88          88  88            `"""""8b,
+     88     Y8,        ,8P  Y8,        ,8P  88                  `8b
+     88      Y8a.    .a8P    Y8a.    .a8P   88          Y8a     a8P
+     88       `"Y8888Y"'      `"Y8888Y"'    88888888888  "Y88888P"
+
+
+-->
+      <div class="setting-2 filters" id="tools">
+        <p class="setting-cat center-item">TOOLS</p>
+        <div class="btn center-item item-1">
+          <input type="radio" name="s2" value="1" id="s2r1" />
+          <label class="radio" for="s2r1">ONLY TYPE</label>
+        </div>
+        <div class="btn center-item item-2">
+          <input type="radio" name="s2" value="1" id="s2r2" />
+          <label class="radio" for="s2r2">TYPE + ILLUSTRATION</label>
+        </div>
+        <div class="btn center-item item-3">
+          <input type="radio" name="s2" value="1" id="s2r3" />
+          <label class="radio" for="s2r3">TYPE + PICTURES</label> <!-- PHTOS? -->
+        </div>
+      </div>
+      <!--
+
+  ,ad8888ba,    ,ad8888ba,    88           ,ad8888ba,    88888888ba    ad88888ba
+ d8"'    `"8b  d8"'    `"8b   88          d8"'    `"8b   88      "8b  d8"     "8b
+d8'           d8'        `8b  88         d8'        `8b  88      ,8P  Y8,
+88            88          88  88         88          88  88aaaaaa8P'  `Y8aaaaa,
+88            88          88  88         88          88  88""""88'      `"""""8b,
+Y8,           Y8,        ,8P  88         Y8,        ,8P  88    `8b            `8b
+ Y8a.    .a8P  Y8a.    .a8P   88          Y8a.    .a8P   88     `8b   Y8a     a8P
+  `"Y8888Y"'    `"Y8888Y"'    88888888888  `"Y8888Y"'    88      `8b   "Y88888P"
+
+
+-->
+      <div class="setting-3 filters" id="colors">
+        <p class="setting-cat center-item">COLORS</p>
+        <div class="btn center-item item-1">
+          <input type="radio" name="s3" value="1" id="s3r1" />
+          <label class="radio" for="s3r1">1</label>
+        </div>
+        <div class="btn center-item item-2">
+          <input type="radio" name="s3" value="1" id="s3r2" />
+          <label class="radio" for="s3r2">2</label>
+        </div>
+        <div class="btn center-item item-3">
+          <input type="radio" name="s3" value="1" id="s3r3" />
+          <label class="radio" for="s3r3">3</label>
+        </div>
+      </div>
+      <!--
+
+888888888888  8b        d8  88888888ba     ,ad8888ba,
+     88        Y8,    ,8P   88      "8b   d8"'    `"8b
+     88         Y8,  ,8P    88      ,8P  d8'        `8b
+     88          "8aa8"     88aaaaaa8P'  88          88
+     88           `88'      88""""""'    88          88
+     88            88       88           Y8,        ,8P
+     88            88       88            Y8a.    .a8P
+     88            88       88             `"Y8888Y"'
+
+
+-->
+      <div class="setting-4 filters" id="typo">
+        <p class="setting-cat center-item">TYPOGRAPHY</p>
+        <div class="btn center-item item-1">
+          <input type="radio" name="s4" value="1" id="s4r1" />
+          <label class="radio" for="s4r1">1</label>
+        </div>
+        <div class="btn center-item item-2">
+          <input type="radio" name="s4" value="1" id="s4r2" />
+          <label class="radio" for="s4r2">2</label>
+        </div>
+        <div class="btn center-item item-3">
+          <input type="radio" name="s4" value="1" id="s4r3" />
+          <label class="radio" for="s4r3">3</label>
+        </div>
+      </div>
+      <!--
+
+ ad88888ba  888888888888  8b        d8  88           88888888888
+d8"     "8b      88        Y8,    ,8P   88           88
+Y8,              88         Y8,  ,8P    88           88
+`Y8aaaaa,        88          "8aa8"     88           88aaaaa
+  `"""""8b,      88           `88'      88           88"""""
+        `8b      88            88       88           88
+Y8a     a8P      88            88       88           88
+ "Y88888P"       88            88       88888888888  88888888888
+
+
+-->
+      <div class="setting-5 filters" id="style">
+        <p class="setting-cat center-item">STYLE</p>
+        <div class="btn center-item item-1">
+          <input type="radio" name="s5" value="1" id="s5r1" />
+          <label class="radio" for="s5r1">1</label>
+        </div>
+        <div class="btn center-item item-2">
+          <input type="radio" name="s5" value="1" id="s5r2" />
+          <label class="radio" for="s5r2">2</label>
+        </div>
+        <div class="btn center-item item-3">
+          <input type="radio" name="s5" value="1" id="s5r3" />
+          <label class="radio" for="s5r3">3</label>
+        </div>
+      </div>
+      <!--
+
+888888888888  88  88b           d88  88888888888
+     88       88  888b         d888  88
+     88       88  88`8b       d8'88  88
+     88       88  88 `8b     d8' 88  88aaaaa
+     88       88  88  `8b   d8'  88  88"""""
+     88       88  88   `8b d8'   88  88
+     88       88  88    `888'    88  88
+     88       88  88     `8'     88  88888888888
+
+
+-->
+      <div class="setting-6 filters" id="time">
+        <p class="setting-cat center-item">TIME</p>
+        <div class="btn center-item item-1">
+          <input type="radio" name="s6" value="1" id="s6r1" />
+          <label class="radio" for="s6r1">1</label>
+        </div>
+        <div class="btn center-item item-2">
+          <input type="radio" name="s6" value="1" id="s6r2" />
+          <label class="radio" for="s6r2">2</label>
+        </div>
+        <div class="btn center-item item-3">
+          <input type="radio" name="s6" value="1" id="s6r3" />
+          <label class="radio" for="s6r3">3</label>
+        </div>
+      </div>
+
+      <div class="btn c1r4 center-item filters" id="money">
+        $
+      </div>
+
+      <div class="btn c2r4 center-item filters">
+        START
+      </div>
+
+      <div class="btn c3r4 center-item filters" onclick="randomize_settings(); set_initial_settings()">
+        RANDOM!
+      </div>
+      <!-- end of hidden elements -->
+      <div class="btn c4r4 center-item">
+        <a href="/about/index.html">ABOUT</a>
+      </div>
+    </div>
+
+    <div class="foot">
+
+      <a href="/index.html">! P R O J E C T R A N D O M I Z E R ! ! P R O J E C T R A N D O M I Z E R ! ! P R O J E C T
+        R A N D O M I Z E R !</a>
+    </div>
+
+    <!-- <div class="setting" id="setting">
+      <div class="setting-cat">
+        <div class="category">
+          💰CLIENT💰<br><br>
+          📄FORMAT📄<br><br>
+          🎨STYLE 🎨
+        </div>
+      </div>
+      <div class="setting-1">
+        <div class="btn">
+          <input type="radio" name="s1" value="1" id="s1r1" />
+          <label class="radio" for="s1r1"></label>
+        </div>
+      </div>
+      <div class="setting-1">
+        <div class="btn">
+          <input type="radio" name="s1" value="2" id="s1r2" />
+          <label class="radio" for="s1r2"></label>
+        </div>
+      </div>
+      <div class="setting-1">
+        <div class="btn">
+          <input type="radio" name="s1" value="2" id="s1r3" />
+          <label class="radio" for="s1r3"></label>
+        </div>
+      </div>
+      <div class="setting-2">
+        <div class="btn">
+          <input type="radio" name="s2" value="2" id="s2r1" />
+          <label class="radio" for="s2r1">BOOK</label>
+        </div>
+      </div>
+      <div class="setting-2">
+        <div class="btn">
+          <input type="radio" name="s2" value="2" id="s2r2" />
+          <label class="radio" for="s2r2">LOGO</label></div>
+      </div>
+      <div class="setting-2">
+        <div class="btn">
+          <input type="radio" name="s2" value="2" id="s2r3" />
+          <label class="radio" for="s2r3">POSTER</label></div>
+      </div>
+      <div class="setting-3">
+        <div class="btn">
+          <input type="radio" name="s3" value="2" id="s3r1" />
+          <label class="radio" for="s3r1">ONLY TYPE</label>
+        </div>
+      </div>
+      <div class="setting-3">
+        <div class="btn">
+          <input type="radio" name="s3" value="2" id="s3r2" />
+          <label class="radio" for="s3r2">TYPE AND ILLUSTRATION</label>
+        </div>
+      </div>
+      <div class="setting-3">
+        <div class="btn">
+          <input type="radio" name="s3" value="2" id="s3r3" />
+          <label class="radio" for="s3r3">TYPE AND PICTURES</label>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="time" id="time">
+      <div class="setting-cat">
+        <div class="category">
+          ⏳TIME⏳
+        </div>
+      </div>
+      <div class="setting-1">
+        <div class="btn" id="time-1">
+          <input type="radio" name="t1" value="2" id="t1r1" />
+          <label class="radio" for="t1r1">20 MIN</label>
+        </div>
+      </div>
+      <div class="setting-1">
+        <div class="btn" id="time-2">
+          <input type="radio" name="t1" value="2" id="t1r2" />
+          <label class="radio" for="t1r2">
+            45 MIN</label>
+        </div>
+      </div>
+      <div class="setting-1">
+        <div class="btn" id="time-3">
+          <input type="radio" name="t1" value="2" id="t1r3" />
+          <label class="radio" for="t1r3">
+            60 MIN</label>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="break" id="break">
+      <div class="setting-cat">
+        <div class="category">☕️BREAK☕️</div>
+      </div>
+      <div class="setting-1">
+        <div class="btn">
+          <input type="radio" name="b1" value="2" id="b1r1" />
+          <label class="radio" for="b1r1">
+            5 MIN</label>
+        </div>
+      </div>
+      <div class="setting-1">
+        <div class="btn">
+          <input type="radio" name="b1" value="2" id="b1r2" />
+          <label class="radio" for="b1r2">
+            10 MIN</label>
+        </div>
+      </div>
+      <div class="setting-1">
+        <div class="btn">
+          <input type="radio" name="b1" value="2" id="b1r3" />
+          <label class="radio" for="b1r3">
+            15 MIN</label>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="start">
+      <div class="setting-cat">
+        <div class="category"></div>
+      </div>
+      <div class="setting-1">
+        <div class="btn" onclick="start()">
+          START
+        </div>
+      </div>
+      <div class="setting-1">
+        <div class="btn" onclick="set_random_settings()">
+          RANDOM
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="timer" id="timer">
+    <p>
+      <span id="timer-text"></span><br>
+      <span id="timer-min">0:00</span>
+    </p>
+    <div class="setting-1" style="margin-bottom: 2rem;">
+      <div class="btn" style="border: solid 2px orange;" onclick="init()">
+        RESET
+      </div>
+    </div>
+  </div> -->
+
+    <script src="../js/settings.js"></script>
+</body>
+
+</html>
