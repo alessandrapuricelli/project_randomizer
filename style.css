@@ -44,9 +44,15 @@ a {
 
 /* qui cambi le impostazioni per il titolo */
 
+
+.head, .foot {
+    font-size: 0.75rem;
+}
+
 .head {
     grid-area: head;
     font-weight: 400;
+    font-size: 40px;
     border-bottom: solid 2px #000;
     /* color: white */
 }
@@ -54,10 +60,6 @@ a {
 .foot {
     grid-area: foot;
     border-top: solid 2px #000;
-}
-
-.head, .foot {
-    font-size: 0.75rem;
 }
 
 .main {
