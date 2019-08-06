@@ -29,20 +29,20 @@ function get_cookie(cname) {
     return "";
 }
 
-function check_cookie(cname) {
-    let cookie = get_cookie(cname);
-    if (cookie != "") {
-        // if there is no cookie write the cookie
-    } else {
-        // else rewrite the cookie
-        cookie = prompt("how many cookies have you eaten in your life?", "10000 or more?");
-        if (cookie != "" && cookie != null) {
-            set_cookie("cookies", cookie, 365);
-            draw_cookies();
-        }
-    }
-    set_text(); // <= same here
-}
+// function check_cookie(cname) {
+//     let cookie = get_cookie(cname);
+//     if (cookie != "") {
+//         // if there is no cookie write the cookie
+//     } else {
+//         // else rewrite the cookie
+//         cookie = prompt("how many cookies have you eaten in your life?", "10000 or more?");
+//         if (cookie != "" && cookie != null) {
+//             set_cookie("cookies", cookie, 365);
+//             draw_cookies();
+//         }
+//     }
+//     set_text(); // <= same here
+// }
 
 // set money div
 set_money_div();
@@ -50,5 +50,5 @@ set_money_div();
 function set_money_div() {
     let money = get_cookie(cookie_names.money);
     if(money === '') money = 0
-    document.getElementById('money').innerText = money + ' CHF';
+    document.getElementById('money').innerText = money + ' POINTS';
 }

@@ -1,16 +1,9 @@
-// TOPIC
-const art = ["Wong Ping: Golden Shower @ KUNSTHALLE BASEL", "Lizzie Fitch + Ryan Trecartin: Whether Line @ FONDAZIONE PRADA", "Wagner + De Burca: You Are Seeing Things @ STEDELIJK"]
-const fashion = ["BALENCIAGA F/W 2020", "PRADA F/W 2020", "GANNI F/W 2020"]
-const music = ["BLOOD ORANGE 2020 TOUR", "SALUT C'EST COOL CONCERT", "NOISE GATE: GIANT SWAN & S S S S @ H3K Basel"]
-
-const topic = [art, fashion, music];
-
 // COLORS
-const monochrome = ['B / W'];
+const mono = ['B / W'];
 const duotone = ['B / W + col1', 'B / W + col2', 'B / W + col3', 'B / W + col4', 'B / W + col5', 'B / W + col6', 'B / W + col7', 'B / W + col8'];
 const tritone = ['B / W + col1 + col1', 'B / W + col2 + col2', 'B / W + col3 + col3', 'B / W + col4 + col4', 'B / W + col5 + col5', 'B / W + col6 + col6', 'B / W + col7 + col7', 'B / W + col8 + col8'];
 
-const colors = [monochrome, duotone, tritone];
+const colors = [mono, duotone, tritone];
 
 // TYPOS
 const serif = ['serif1', 'serif2', 'serif3', 'serif4', 'serif5', 'serif6'];
@@ -21,61 +14,95 @@ const typo = [serif, sans_serif, crazy];
 
 const settings = { topic, colors, typo }
 
+const settings_order = ['time', 'style', 'tools', 'colors', 'typo', 'topic', 'recap', 'links']
+
+let settings_counter = 0;
+
 console.log(settings);
 
 
 
-// initialize the menu
-function init() {
-  // clearInterval(timer);
-  // $('#timer').hide('fast');
-  set_initial_settings();
+// // initialize the menu
+// function init() {
+//   // clearInterval(timer);
+//   // $('#timer').hide('fast');
+//   // set_initial_settings();
 
-  // check setting cookie and set it to empty
+//   // check setting cookie and set it to empty
 
-}
+// }
 
-init();
+// init();
 
 
 function go_to_settings(el) {
   // first hide the level menu
-  $('.level').hide('fast', () => show_settings(el.dataset.level))
-}
-
-function show_settings(level) {
-  const filters = document.getElementsByClassName('filters');
-  for (const el of filters) {
-    el.style.visibility = 'visible'
-  }
-  // set the level as cookie. we will need it later on the next page
-  set_cookie(cookie_names.level, level, 365);
-  set_timers(level);
-}
-
-
-
-function set_initial_settings() {
-  console.log('set random settings');
-  const ids = ['topic', 'colors', 'typo'];
-  for (const id of ids) {
-    const setting = document.getElementById(id).children;
-    // console.log(setting);
-    let idx = 0;
-    for (const item of setting) {
-      // console.log(item);
-      const label = $(item).find('label.radio');
-      // console.log(label);
-      if (label.length > 0) {
-        const txt = get_random_element_from_array(settings[id][idx]);
-        // console.log(txt);
-        $(label).text(txt);
-        idx++;
-        if (idx > 2) break;
-      }
+  $('.level').hide('fast', () => {
+    next_settings();
+    // show the rest of the footer
+    const footer = document.getElementsByClassName('hidden-footer')
+    for (const el of footer) {
+      el.style.visibility = 'visible'
     }
-  }
+    const level = el.dataset.level
+    // set the level as cookie. we will need it later on the next page
+    set_cookie(cookie_names.level, level, 365);
+    set_timers(level);
+  })
 }
+
+function next_settings() {
+
+  // remove the older
+  if (settings_counter > 0) {
+
+    // remove older setting
+    document.getElementById(settings_order[settings_counter - 1]).style.visibility = 'collapse';
+  }
+
+  // show the new setting
+  const id = settings_order[settings_counter];
+  const setting = document.getElementById(id);
+  setting.style.visibility = 'visible';
+
+  if(id === 'recap'){
+    // get all the settings
+
+    get_settings();
+  }
+
+  // when we reach the last setting we change the next button to start
+  if (settings_counter >= settings_order.length - 1) {
+    const next_btn = document.getElementById('next');
+    next_btn.innerHTML = '<a href="../randomizer/index.html">START!</a>';
+  }
+
+  settings_counter++;
+}
+
+
+
+// function set_initial_settings() {
+//   console.log('set random settings');
+//   const ids = ['topic', 'colors', 'typo'];
+//   for (const id of ids) {
+//     const setting = document.getElementById(id).children;
+//     // console.log(setting);
+//     let idx = 0;
+//     for (const item of setting) {
+//       // console.log(item);
+//       const label = $(item).find('label.radio');
+//       // console.log(label);
+//       if (label.length > 0) {
+//         const txt = get_random_element_from_array(settings[id][idx]);
+//         // console.log(txt);
+//         $(label).text(txt);
+//         idx++;
+//         if (idx > 2) break;
+//       }
+//     }
+//   }
+// }
 
 const beginner = [180, 240, 300];
 const intermediate = [60, 90, 120];
@@ -149,6 +176,8 @@ function randomize_settings() {
   }
 }
 
+randomize_settings()
+
 function get_settings() {
   const result = {};
   for (const id of ids) {
@@ -156,16 +185,95 @@ function get_settings() {
     const inputs = $(children).find('label.radio');
 
     for (const input of inputs) {
-      if(input.control.checked === true){
-        result[id] = input.innerText;
-        if(id === 'time')result[id] = input.value;
+      if (input.control.checked === true) {
+        result[id] = input.dataset.setting;
+        if (id === 'time') result[id] = input.value;
       }
-    }    
+    }
   }
+  // set the combination settings
+  switch(result['topic']){
+    case 'art':
+      result['topic'] = {art: [get_random_element_from_array(art_a), get_random_element_from_array(art_a)]};
+      break;
+    case 'music':
+        result['topic'] = {music: [get_random_element_from_array(music_a), get_random_element_from_array(music_a)]};
+      break;
+    case 'fashion':
+        result['topic'] = {fashion: [get_random_element_from_array(fashion_a), get_random_element_from_array(fashion_a)]};
+      break;
+  }
+
+  switch(result['typo']){
+    case 'serif':
+        result['typo'] = get_random_element_from_array(serif);
+      break;
+    case 'sans-serif':
+        result['typo'] = get_random_element_from_array(sans_serif);
+      break;
+    case 'surprise':
+        result['typo'] = get_random_element_from_array(crazy);
+      break;
+  }
+
+  switch(result['colors']){
+    case 'b/w':
+        result['colors'] = get_random_element_from_array(mono);
+      break;
+    case 'similar colors':
+        result['colors'] = get_random_element_from_array(duotone);
+      break;
+    case 'different colors':
+        result['colors'] = get_random_element_from_array(tritone);
+      break;
+  }
+
   console.log(result);
+
+  generate_recap(result);
+
+  generate_links(result['topic']);
+
   const json = JSON.stringify(result);
   set_cookie(cookie_names.settings, json, 365);
   // now we should write them to a cookie to be read in the next page
+
+}
+
+function generate_recap(settings){
+  const parent = document.getElementById('recap');
+  
+
+  Object.keys(settings).forEach(key => {
+    let setting = settings[key];
+    const setting_name = key;
+    if(setting_name === 'topic'){
+      console.log(Object.keys(setting));
+      setting = Object.keys(setting)[0];
+    }
+
+    // draw the recap title
+    const recap_title = document.createElement('div');
+    recap_title.setAttribute('class', 'info-text dark center-item');
+    recap_title.innerText = setting_name;
+    parent.appendChild(recap_title)
+    
+    // draw the recap content
+    const recap_content = document.createElement('div');
+    recap_content.setAttribute('class', 'info-text center-item');
+    recap_content.innerText = setting;
+    parent.appendChild(recap_content);
+  })
+
+  const level = get_cookie(cookie_names.level);
+  const level_btn = document.createElement('div');
+  level_btn.setAttribute('class', 'info-text dark center-item');
+  level_btn.innerText = level;
+  parent.appendChild(level_btn);
+
+}
+
+function generate_links(topic){
 
 }
 

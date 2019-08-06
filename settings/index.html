@@ -8,6 +8,7 @@
   <title>project randomizer</title>
   <link rel="stylesheet" href="../style.css">
   <script src="../js/libs/jquery-3.3.1.min.js"></script>
+  <script src="../js/global.js"></script>
 
 
 </head>
@@ -21,12 +22,28 @@
 
     <div class="main">
       <div class="level">
-        <p class="center-item">
-          CHOOSE YOUR LEVEL:
-        </p>
-        <div class="btn center-item" onclick="go_to_settings(this)" data-level="beginner">BEGINNER</div>
-        <div class="btn center-item" onclick="go_to_settings(this)" data-level="intermediate">INTERMEDIATE</div>
-        <div class="btn center-item" onclick="go_to_settings(this)" data-level="expert">EXPERT</div>
+        <div class="pragrphs">
+          <p>
+            CHOOSE YOUR LEVEL:  <br>
+  
+            You start at the beginner level, by
+            producing posters you will get points
+            which which allow you to increse level.
+            At the expert level you will be able to
+            publish your poster in a very little time.
+            <br>
+            <br>
+            <br>
+            Expert: 500 points <br>
+            Intermediate: 100 points <br>
+            Beginner: 0 points <br>
+          </p>
+        </div>
+        <div class="btns">
+          <div class="btn center-item" onclick="go_to_settings(this)" data-level="beginner">BEGINNER</div>
+          <div class="btn center-item" onclick="go_to_settings(this)" data-level="intermediate">INTERMEDIATE</div>
+          <div class="btn center-item" onclick="go_to_settings(this)" data-level="expert">EXPERT</div>
+        </div>
       </div>
       <!-- hidden elements -->
 
@@ -44,19 +61,19 @@
 
       -->
 
-      <div class="setting-1 filters" id="topic">
-        <p class="setting-cat center-item">TOPIC</p>
+      <div class="setting hidden-main" id="topic">
+        <p class="setting-cat info-text dark center-item">TOPIC</p>
         <div class="btn center-item item-1">
           <input type="radio" name="s1" value="1" id="s1r1" />
-          <label class="radio" for="s1r1">1</label>
+          <label class="radio" data-setting="art" for="s1r1">ART</label>
         </div>
         <div class="btn center-item item-2">
           <input type="radio" name="s1" value="1" id="s1r2" />
-          <label class="radio" for="s1r2">2</label>
+          <label class="radio" data-setting="music" for="s1r2">MUSIC</label>
         </div>
         <div class="btn center-item item-3">
           <input type="radio" name="s1" value="1" id="s1r3" />
-          <label class="radio" for="s1r3">3</label>
+          <label class="radio" data-setting="fashion" for="s1r3">FASHION</label>
         </div>
       </div>
       <!--
@@ -72,19 +89,19 @@
 
 
 -->
-      <div class="setting-2 filters" id="tools">
-        <p class="setting-cat center-item">TOOLS</p>
+      <div class="setting hidden-main" id="tools">
+        <p class="setting-cat info-text dark center-item">TOOLS</p>
         <div class="btn center-item item-1">
           <input type="radio" name="s2" value="1" id="s2r1" />
-          <label class="radio" for="s2r1">ONLY TYPE</label>
+          <label class="radio" data-setting="only type" for="s2r1">ONLY TYPE</label>
         </div>
         <div class="btn center-item item-2">
           <input type="radio" name="s2" value="1" id="s2r2" />
-          <label class="radio" for="s2r2">TYPE + ILLUSTRATION</label>
+          <label class="radio" data-setting="type + illustration" for="s2r2">TYPE + ILLUSTRATION</label>
         </div>
         <div class="btn center-item item-3">
           <input type="radio" name="s2" value="1" id="s2r3" />
-          <label class="radio" for="s2r3">TYPE + PICTURES</label> <!-- PHTOS? -->
+          <label class="radio" data-setting="type + pictures" for="s2r3">TYPE + PICTURES</label> <!-- PHTOS? -->
         </div>
       </div>
       <!--
@@ -100,19 +117,19 @@ Y8,           Y8,        ,8P  88         Y8,        ,8P  88    `8b            `8
 
 
 -->
-      <div class="setting-3 filters" id="colors">
-        <p class="setting-cat center-item">COLORS</p>
+      <div class="setting hidden-main" id="colors">
+        <p class="setting-cat info-text dark center-item">COLORS</p>
         <div class="btn center-item item-1">
           <input type="radio" name="s3" value="1" id="s3r1" />
-          <label class="radio" for="s3r1">1</label>
+          <label class="radio" data-setting="b/w" for="s3r1">B/W</label>
         </div>
         <div class="btn center-item item-2">
           <input type="radio" name="s3" value="1" id="s3r2" />
-          <label class="radio" for="s3r2">2</label>
+          <label class="radio" data-setting="similar colors" for="s3r2">SIMILAR COLORS (WRONG)</label>
         </div>
         <div class="btn center-item item-3">
           <input type="radio" name="s3" value="1" id="s3r3" />
-          <label class="radio" for="s3r3">3</label>
+          <label class="radio" data-setting="different colors" for="s3r3">DIFFERENT COLORS (WRONG)</label>
         </div>
       </div>
       <!--
@@ -128,19 +145,19 @@ Y8,           Y8,        ,8P  88         Y8,        ,8P  88    `8b            `8
 
 
 -->
-      <div class="setting-4 filters" id="typo">
-        <p class="setting-cat center-item">TYPOGRAPHY</p>
+      <div class="setting hidden-main" id="typo">
+        <p class="setting-cat info-text dark center-item">TYPOGRAPHY</p>
         <div class="btn center-item item-1">
           <input type="radio" name="s4" value="1" id="s4r1" />
-          <label class="radio" for="s4r1">1</label>
+          <label class="radio" data-setting="serif" for="s4r1">SERIF</label>
         </div>
         <div class="btn center-item item-2">
           <input type="radio" name="s4" value="1" id="s4r2" />
-          <label class="radio" for="s4r2">2</label>
+          <label class="radio" data-setting="sans-serif" for="s4r2">SANS SERIF</label>
         </div>
         <div class="btn center-item item-3">
           <input type="radio" name="s4" value="1" id="s4r3" />
-          <label class="radio" for="s4r3">3</label>
+          <label class="radio" data-setting="surprise" for="s4r3">SURPRISE</label>
         </div>
       </div>
       <!--
@@ -156,19 +173,19 @@ Y8a     a8P      88            88       88           88
 
 
 -->
-      <div class="setting-5 filters" id="style">
-        <p class="setting-cat center-item">STYLE</p>
+      <div class="setting hidden-main" id="style">
+        <p class="setting-cat info-text dark center-item">STYLE</p>
         <div class="btn center-item item-1">
           <input type="radio" name="s5" value="1" id="s5r1" />
-          <label class="radio" for="s5r1">1</label>
+          <label class="radio" data-setting="swiss style" for="s5r1">SWISS STYLE</label>
         </div>
         <div class="btn center-item item-2">
           <input type="radio" name="s5" value="1" id="s5r2" />
-          <label class="radio" for="s5r2">2</label>
+          <label class="radio" data-setting="post internet" for="s5r2">POST INTERNET</label>
         </div>
         <div class="btn center-item item-3">
           <input type="radio" name="s5" value="1" id="s5r3" />
-          <label class="radio" for="s5r3">3</label>
+          <label class="radio" data-setting="minimal" for="s5r3">MINIMAL</label>
         </div>
       </div>
       <!--
@@ -184,35 +201,72 @@ Y8a     a8P      88            88       88           88
 
 
 -->
-      <div class="setting-6 filters" id="time">
-        <p class="setting-cat center-item">TIME</p>
+
+      <div class="setting hidden-main" id="time">
+        <p class="setting-cat info-text dark center-item">TIME</p>
         <div class="btn center-item item-1">
           <input type="radio" name="s6" value="1" id="s6r1" />
-          <label class="radio" for="s6r1">1</label>
+          <label class="radio" data-setting="min" for="s6r1">1</label>
         </div>
         <div class="btn center-item item-2">
           <input type="radio" name="s6" value="1" id="s6r2" />
-          <label class="radio" for="s6r2">2</label>
+          <label class="radio" data-setting="mid" for="s6r2">2</label>
         </div>
         <div class="btn center-item item-3">
           <input type="radio" name="s6" value="1" id="s6r3" />
-          <label class="radio" for="s6r3">3</label>
+          <label class="radio" data-setting="max" for="s6r3">3</label>
         </div>
       </div>
 
-      <div class="btn c1r4 center-item filters" id="money">
-        $
+      <!--
+
+      88888888ba   88888888888  ,ad8888ba,         db         88888888ba
+      88      "8b  88          d8"'    `"8b       d88b        88      "8b
+      88      ,8P  88         d8'                d8'`8b       88      ,8P
+      88aaaaaa8P'  88aaaaa    88                d8'  `8b      88aaaaaa8P'
+      88""""88'    88"""""    88               d8YaaaaY8b     88""""""'
+      88    `8b    88         Y8,             d8""""""""8b    88
+      88     `8b   88          Y8a.    .a8P  d8'        `8b   88
+      88      `8b  88888888888  `"Y8888Y"'  d8'          `8b  88
+
+
+      -->
+      <div class="recap hidden-main" id="recap">
+        <!-- <div class="recap_title"></div> -->
       </div>
 
-      <div class="btn c2r4 center-item filters" onclick="get_settings()">
-        <a href="/randomizer/index.html">START</a>
+      <!--
+
+      88           88  888b      88  88      a8P   ad88888ba
+      88           88  8888b     88  88    ,88'   d8"     "8b
+      88           88  88 `8b    88  88  ,88"     Y8,
+      88           88  88  `8b   88  88,d88'      `Y8aaaaa,
+      88           88  88   `8b  88  8888"88,       `"""""8b,
+      88           88  88    `8b 88  88P   Y8b            `8b
+      88           88  88     `8888  88     "88,  Y8a     a8P
+      88888888888  88  88      `888  88       Y8b  "Y88888P"
+
+
+      -->
+
+      <div class="links hidden-main" id="links"> 
+        LINKS
       </div>
 
-      <div class="btn c3r4 center-item filters" onclick="randomize_settings(); set_initial_settings()">
+
+      <div class="info-text dark c1r4 center-item hidden-footer" id="money">
+        POINTS
+      </div>
+
+      <div class="btn c2r4 center-item hidden-footer" id="next" onclick="next_settings()">
+        NEXT
+      </div>
+
+      <div class="btn c3r4 center-item hidden-footer" onclick="randomize_settings(); set_initial_settings()">
         RANDOM!
       </div>
       <!-- end of hidden elements -->
-      <div class="btn c4r4 center-item">
+      <div class="btn dark c4r4 center-item">
         <a href="/about/index.html">ABOUT</a>
       </div>
     </div>

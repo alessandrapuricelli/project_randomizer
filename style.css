@@ -44,7 +44,6 @@ a {
 
 /* qui cambi le impostazioni per il titolo */
 
-
 .head, .foot {
     font-size: 0.75rem;
 }
@@ -52,7 +51,7 @@ a {
 .head {
     grid-area: head;
     font-weight: 400;
-    font-size: 40px;
+    /* font-size: 40px; */
     border-bottom: solid 2px #000;
     /* color: white */
 }
@@ -102,42 +101,39 @@ classes: they describe the position in the grid by column and row number
 
 .level {
     z-index: 999999;
-    grid-column: 1 / 2;
-    grid-row: 1 / 8;
+    grid-column: 1 / 3;
+    grid-row: 1 / 4;
     /* add background to cover start button */
     /* background-color: aquamarine; */
-    display: grid;
-    grid-template-rows: repeat(7, 1fr);
+    /* display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); */
+    display: flex;
+    flex-direction: row;
 }
 
-.filters {
+.pragrphs {
+    width: 50%;
+    padding: 5px;
+}
+
+.btns {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+
+.hidden-main, .hidden-footer {
     visibility: collapse;
 }
 
-.setting-1, .setting-2, .setting-3, .setting-4, .setting-5, .setting-6 {
+.setting {
     grid-column: 1 / 5;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: "cat item1 item2 item3"
-}
-
-.setting-1{
-grid-row: 1 / 2;
-}
-.setting-2{
-grid-row: 2 / 3;
-}
-.setting-3{
-grid-row: 3 / 4;
-}
-.setting-4{
-grid-row: 4 / 5;
-}
-.setting-5{
-grid-row: 5 / 6;
-}
-.setting-6{
-grid-row: 6 / 7;
+    grid-template-areas: "cat item1 item2 item3";
+    grid-row: 3 / 4;
 }
 
 .item-1 {
@@ -156,33 +152,51 @@ grid-row: 6 / 7;
     grid-area: cat;
 }
 
-.timer{
+.recap, .links{
+    grid-row: 1 / 7;
+    display: grid;
+}
+
+.recap{
+    grid-column: 1 / 5;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: 25% 1fr;
+}
+
+.recap_title{
+
+}
+
+.recap_content{
+
+}
+
+.links{
+    grid-column: 1 / 4;
+    grid-template-columns: repeat(3, 1fr);
+}
+.timer {
     grid-column: 1 / 5;
     grid-row: 4 / 5;
     background-color: #000;
     color: #ddd;
-
     margin: auto;
     width: 99%;
     height: 50px;
-
     border-radius: 25px;
-
 }
 
-.info{
-
+.info {
     grid-column: 1 / 3;
     grid-row: 1 / 4;
     padding: 1rem;
-
     line-height: 1.75rem;
 }
 
-.info_text{
+/* .info_text {
     font-size: 2rem;
-    font-family: monospace; /* uso monospace cosi non balla*/
-}
+    font-family: monospace;
+} */
 
 /* set item in the center of the div */
 
@@ -195,7 +209,7 @@ grid-row: 6 / 7;
     align-content: stretch;
 }
 
-.btn, .info_text {
+.btn, .info-text {
     margin: auto;
     width: 85%;
     height: auto;
@@ -203,6 +217,12 @@ grid-row: 6 / 7;
     text-align: center;
     border: solid 2px #000;
     border-radius: 25px;
+    text-transform: uppercase;
+}
+
+.dark{
+    background-color: #000;
+    color: #ddd;
 }
 
 .btn .radio {
