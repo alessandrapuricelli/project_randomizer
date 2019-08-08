@@ -1,3 +1,79 @@
+// TOPIC
+const art_a = [
+  { name: 'a_1', text_info: '1', images_link: 'a' },
+  { name: 'a_2', text_info: '2', images_link: '' },
+  { name: 'a_3', text_info: '3', images_link: 'c' },
+  { name: 'a_4', text_info: '4', images_link: 'd' },
+  { name: 'a_5', text_info: '5', images_link: 'e' },
+  { name: 'a_6', text_info: '6', images_link: 'f' },
+  { name: 'a_7', text_info: '7', images_link: 'g' },
+  { name: 'a_8', text_info: '8', images_link: 'h' },
+  { name: 'a_9', text_info: '9', images_link: 'i' },
+  { name: 'a_10', text_info: '10', images_link: 'g' },
+]
+const art_b = [
+  { name: 'b_1', text_info: '1', images_link: 'a' },
+  { name: 'b_2', text_info: '2', images_link: '' },
+  { name: 'b_3', text_info: '3', images_link: 'c' },
+  { name: 'b_4', text_info: '4', images_link: 'd' },
+  { name: 'b_5', text_info: '5', images_link: 'e' },
+  { name: 'b_6', text_info: '6', images_link: 'f' },
+  { name: 'b_7', text_info: '7', images_link: 'g' },
+  { name: 'b_8', text_info: '8', images_link: 'h' },
+  { name: 'b_9', text_info: '9', images_link: 'i' },
+  { name: 'b_10', text_info: '10', images_link: 'g' },
+]
+const fashion_a = [
+  { name: 'a_1', text_info: '1', images_link: 'a' },
+  { name: 'a_2', text_info: '2', images_link: '' },
+  { name: 'a_3', text_info: '3', images_link: 'c' },
+  { name: 'a_4', text_info: '4', images_link: 'd' },
+  { name: 'a_5', text_info: '5', images_link: 'e' },
+  { name: 'a_6', text_info: '6', images_link: 'f' },
+  { name: 'a_7', text_info: '7', images_link: 'g' },
+  { name: 'a_8', text_info: '8', images_link: 'h' },
+  { name: 'a_9', text_info: '9', images_link: 'i' },
+  { name: 'a_10', text_info: '10', images_link: 'g' },
+]
+const fashion_b = [
+  { name: 'b_1', text_info: '1', images_link: 'a' },
+  { name: 'b_2', text_info: '2', images_link: '' },
+  { name: 'b_3', text_info: '3', images_link: 'c' },
+  { name: 'b_4', text_info: '4', images_link: 'd' },
+  { name: 'b_5', text_info: '5', images_link: 'e' },
+  { name: 'b_6', text_info: '6', images_link: 'f' },
+  { name: 'b_7', text_info: '7', images_link: 'g' },
+  { name: 'b_8', text_info: '8', images_link: 'h' },
+  { name: 'b_9', text_info: '9', images_link: 'i' },
+  { name: 'b_10', text_info: '10', images_link: 'g' },
+]
+const music_a = [
+  { name: 'a_1', text_info: '1', images_link: 'a' },
+  { name: 'a_2', text_info: '2', images_link: '' },
+  { name: 'a_3', text_info: '3', images_link: 'c' },
+  { name: 'a_4', text_info: '4', images_link: 'd' },
+  { name: 'a_5', text_info: '5', images_link: 'e' },
+  { name: 'a_6', text_info: '6', images_link: 'f' },
+  { name: 'a_7', text_info: '7', images_link: 'g' },
+  { name: 'a_8', text_info: '8', images_link: 'h' },
+  { name: 'a_9', text_info: '9', images_link: 'i' },
+  { name: 'a_10', text_info: '10', images_link: 'g' },
+]
+const music_b = [
+  { name: 'b_1', text_info: '1', images_link: 'a' },
+  { name: 'b_2', text_info: '2', images_link: '' },
+  { name: 'b_3', text_info: '3', images_link: 'c' },
+  { name: 'b_4', text_info: '4', images_link: 'd' },
+  { name: 'b_5', text_info: '5', images_link: 'e' },
+  { name: 'b_6', text_info: '6', images_link: 'f' },
+  { name: 'b_7', text_info: '7', images_link: 'g' },
+  { name: 'b_8', text_info: '8', images_link: 'h' },
+  { name: 'b_9', text_info: '9', images_link: 'i' },
+  { name: 'b_10', text_info: '10', images_link: 'g' },
+];
+
+const topic = [art_a, art_b, fashion_a, fashion_b, music_a, music_b];
+
 // COLORS
 const mono = ['B / W'];
 const duotone = ['B / W + col1', 'B / W + col2', 'B / W + col3', 'B / W + col4', 'B / W + col5', 'B / W + col6', 'B / W + col7', 'B / W + col8'];
@@ -65,7 +141,7 @@ function next_settings() {
   const setting = document.getElementById(id);
   setting.style.visibility = 'visible';
 
-  if(id === 'recap'){
+  if (id === 'recap') {
     // get all the settings
 
     get_settings();
@@ -192,39 +268,39 @@ function get_settings() {
     }
   }
   // set the combination settings
-  switch(result['topic']){
+  switch (result['topic']) {
     case 'art':
-      result['topic'] = {art: [get_random_element_from_array(art_a), get_random_element_from_array(art_a)]};
+      result['topic'] = { art: [get_random_element_from_array(art_a), get_random_element_from_array(art_a)] };
       break;
     case 'music':
-        result['topic'] = {music: [get_random_element_from_array(music_a), get_random_element_from_array(music_a)]};
+      result['topic'] = { music: [get_random_element_from_array(music_a), get_random_element_from_array(music_a)] };
       break;
     case 'fashion':
-        result['topic'] = {fashion: [get_random_element_from_array(fashion_a), get_random_element_from_array(fashion_a)]};
+      result['topic'] = { fashion: [get_random_element_from_array(fashion_a), get_random_element_from_array(fashion_a)] };
       break;
   }
 
-  switch(result['typo']){
+  switch (result['typo']) {
     case 'serif':
-        result['typo'] = get_random_element_from_array(serif);
+      result['typo'] = get_random_element_from_array(serif);
       break;
     case 'sans-serif':
-        result['typo'] = get_random_element_from_array(sans_serif);
+      result['typo'] = get_random_element_from_array(sans_serif);
       break;
     case 'surprise':
-        result['typo'] = get_random_element_from_array(crazy);
+      result['typo'] = get_random_element_from_array(crazy);
       break;
   }
 
-  switch(result['colors']){
+  switch (result['colors']) {
     case 'b/w':
-        result['colors'] = get_random_element_from_array(mono);
+      result['colors'] = get_random_element_from_array(mono);
       break;
     case 'similar colors':
-        result['colors'] = get_random_element_from_array(duotone);
+      result['colors'] = get_random_element_from_array(duotone);
       break;
     case 'different colors':
-        result['colors'] = get_random_element_from_array(tritone);
+      result['colors'] = get_random_element_from_array(tritone);
       break;
   }
 
@@ -240,16 +316,18 @@ function get_settings() {
 
 }
 
-function generate_recap(settings){
+function generate_recap(settings) {
   const parent = document.getElementById('recap');
-  
+
 
   Object.keys(settings).forEach(key => {
     let setting = settings[key];
     const setting_name = key;
-    if(setting_name === 'topic'){
-      console.log(Object.keys(setting));
-      setting = Object.keys(setting)[0];
+    if (setting_name === 'topic') {
+      console.log(setting);
+      const topic_name = Object.keys(setting)[0];
+      console.log(setting[topic_name][0]);
+      setting = topic_name + ': ' + setting[topic_name][0].name + ' + ' + setting[topic_name][1].name;
     }
 
     // draw the recap title
@@ -257,7 +335,7 @@ function generate_recap(settings){
     recap_title.setAttribute('class', 'info-text dark center-item');
     recap_title.innerText = setting_name;
     parent.appendChild(recap_title)
-    
+
     // draw the recap content
     const recap_content = document.createElement('div');
     recap_content.setAttribute('class', 'info-text center-item');
@@ -273,8 +351,40 @@ function generate_recap(settings){
 
 }
 
-function generate_links(topic){
+function generate_links(topic) {
 
+  const link_a = document.getElementById('links-a');
+  const link_b = document.getElementById('links-b');
+
+  const topic_name = Object.keys(topic)[0];
+  console.log(topic_name, topic[topic_name]);
+  const topic_a = topic[topic_name][0];
+  const topic_b = topic[topic_name][1];
+  let idx = 0;
+  for (const el of topic[topic_name]) {
+    const topic_head = document.createElement('h3')
+    topic_head.innerText = el.name + '\ntext content:';
+    if(idx === 0)link_a.appendChild(topic_head);
+    else link_b.appendChild(topic_head);
+
+    const topic_txt = document.createElement('p');
+    topic_txt.innerText = el.text_info;
+    if(idx === 0)link_a.appendChild(topic_txt);
+    else link_b.appendChild(topic_txt);
+
+
+    const links_head = document.createElement('h3')
+    links_head.innerText = 'images links:';
+    if(idx === 0)link_a.appendChild(links_head);
+    else link_b.appendChild(links_head);
+
+    const links_txt = document.createElement('p');
+    links_txt.innerText = el.images_link;
+    if(idx === 0)link_a.appendChild(links_txt);
+    else link_b.appendChild(links_txt);
+
+    idx++;
+  }
 }
 
 function fill_array(string, item_num) {

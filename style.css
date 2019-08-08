@@ -173,7 +173,16 @@ classes: they describe the position in the grid by column and row number
 
 .links{
     grid-column: 1 / 4;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+}
+.links-txt{
+    padding: 1rem;
+}
+#links-a{
+
+}
+#links-b{
+
 }
 .timer {
     grid-column: 1 / 5;
