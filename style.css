@@ -124,6 +124,11 @@ classes: they describe the position in the grid by column and row number
     align-content: space-around;
 }
 
+.lighten{
+    border: solid 2px #aaa !important;
+    color: #aaa;
+}
+
 .hidden-main, .hidden-footer {
     visibility: collapse;
 }
@@ -172,7 +177,7 @@ classes: they describe the position in the grid by column and row number
 }
 
 .links{
-    grid-column: 1 / 4;
+    grid-column: 1 / 5;
     grid-template-columns: repeat(4, 1fr);
 }
 .links-txt{

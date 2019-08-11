@@ -22,10 +22,7 @@
     <div class="main">
       <div class="level">
         <div class="pragrphs">
-          <p>
-            CHOOSE YOUR LEVEL: <br>
-
-            You start at the beginner level, by
+          <p>You start at the beginner level, by
             producing posters you will get points
             which which allow you to increse level.
             At the expert level you will be able to
@@ -39,9 +36,10 @@
           </p>
         </div>
         <div class="btns">
-          <div class="btn center-item" onclick="go_to_settings(this)" data-level="beginner">BEGINNER</div>
-          <div class="btn center-item" onclick="go_to_settings(this)" data-level="intermediate">INTERMEDIATE</div>
-          <div class="btn center-item" onclick="go_to_settings(this)" data-level="expert">EXPERT</div>
+          <div class="info-text center-item" onclick="go_to_settings(this)" data-level="beginner">BEGINNER</div>
+          <div class="info-text center-item" onclick="go_to_settings(this)" data-level="intermediate">INTERMEDIATE</div>
+          <div class="info-text center-item" onclick="go_to_settings(this)" data-level="expert">EXPERT</div>
+          <!-- <div class="btn center-item" onclick="go_to_settings(this)" data-level="expert">RANDOM</div> -->
         </div>
       </div>
       <!-- hidden elements -->
@@ -265,21 +263,21 @@ Y8a     a8P      88            88       88           88
       </div>
 
 
-      <div class="info-text dark c1r4 center-item hidden-footer" id="money">
+      <div class="info-text dark c1r4 center-item" id="points">
         POINTS
       </div>
 
-      <div class="btn c2r4 center-item hidden-footer" id="next" onclick="next_settings()">
+      <div class="btn c4r4 center-item" id="next" onclick="next_settings()">
         NEXT
       </div>
 
-      <div class="btn c3r4 center-item hidden-footer" onclick="randomize_settings(); set_initial_settings()">
+      <div class="btn c2r4 center-item" id="random" onclick="random()">
         RANDOM!
       </div>
       <!-- end of hidden elements -->
-      <div class="btn dark c4r4 center-item">
+      <!-- <div class="btn dark c4r4 center-item">
         <a href="/about/index.html">ABOUT</a>
-      </div>
+      </div> -->
     </div>
 
     <div class="foot">

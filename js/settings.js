@@ -97,18 +97,26 @@ let settings_counter = 0;
 console.log(settings);
 
 
-
+let level;
+let points;
 // // initialize the menu
-// function init() {
-//   // clearInterval(timer);
-//   // $('#timer').hide('fast');
-//   // set_initial_settings();
+function init() {
+  // get the level
+  level = get_level();
+  const level_btns = document.getElementsByClassName('btns')[0].children;
+  for (const el of level_btns) {
+    const attribute = el.getAttribute('class');
+    console.log(attribute, el.dataset.level);
+    if (el.dataset.level === level) {
+      el.setAttribute('class', attribute + ' dark');
+    } else {
+      el.setAttribute('class', attribute + ' lighten');
+    }
+  }
 
-//   // check setting cookie and set it to empty
+}
 
-// }
-
-// init();
+init();
 
 
 function go_to_settings(el) {
@@ -129,6 +137,14 @@ function go_to_settings(el) {
 
 function next_settings() {
 
+  if (settings_counter === 0) {
+    // first hide the level menu
+    $('.level').hide('fast');
+    // hide the random button
+    $('#random').hide('fast');
+
+    set_timers(level);
+  }
   // remove the older
   if (settings_counter > 0) {
 
@@ -157,6 +173,20 @@ function next_settings() {
 }
 
 
+
+function random(){
+  randomize_settings();
+  settings_counter = 6;
+  if (settings_counter === 6) {
+    // first hide the level menu
+    $('.level').hide('fast');
+    // hide the random button
+    $('#random').hide('fast');
+
+    set_timers(level);
+  }
+  next_settings();
+}
 
 // function set_initial_settings() {
 //   console.log('set random settings');
@@ -206,8 +236,6 @@ function set_timers(level) {
       break;
 
   }
-
-  randomize_settings();
 
   function assign_time(arr) {
     const minutes = ' "';//cambia questo per cambiare cosa viene scritto dopo i minuti
@@ -364,23 +392,23 @@ function generate_links(topic) {
   for (const el of topic[topic_name]) {
     const topic_head = document.createElement('h3')
     topic_head.innerText = el.name + '\ntext content:';
-    if(idx === 0)link_a.appendChild(topic_head);
+    if (idx === 0) link_a.appendChild(topic_head);
     else link_b.appendChild(topic_head);
 
     const topic_txt = document.createElement('p');
     topic_txt.innerText = el.text_info;
-    if(idx === 0)link_a.appendChild(topic_txt);
+    if (idx === 0) link_a.appendChild(topic_txt);
     else link_b.appendChild(topic_txt);
 
 
     const links_head = document.createElement('h3')
     links_head.innerText = 'images links:';
-    if(idx === 0)link_a.appendChild(links_head);
+    if (idx === 0) link_a.appendChild(links_head);
     else link_b.appendChild(links_head);
 
     const links_txt = document.createElement('p');
     links_txt.innerText = el.images_link;
-    if(idx === 0)link_a.appendChild(links_txt);
+    if (idx === 0) link_a.appendChild(links_txt);
     else link_b.appendChild(links_txt);
 
     idx++;

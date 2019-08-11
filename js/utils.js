@@ -1,10 +1,12 @@
 // cookies stuff
 const cookie_names = {
-    money: 'money',
+    points: 'points',
     settings: 'settings',
     level: 'level'
 }
-
+const level_names = {
+    beginner: 'beginner', intermediate: 'intermediate', expert: 'expert'
+}
 
 function set_cookie(cname, cvalue, exdays) {
     const d = new Date();
@@ -48,7 +50,22 @@ function get_cookie(cname) {
 set_money_div();
 
 function set_money_div() {
-    let money = get_cookie(cookie_names.money);
-    if(money === '') money = 0
-    document.getElementById('money').innerText = money + ' POINTS';
+    let points = get_cookie(cookie_names.points);
+    if(points === '') points = 0
+    document.getElementById('points').innerText = points + ' POINTS';
+}
+
+function get_level(){
+    const points = get_cookie(cookie_names.points);
+    let level;
+    if(points >= 500){
+        level = level_names.expert;
+    }else if(points < 500 && points >= 100) {
+        level = level_names.intermediate;
+    }else{
+        level = level_names.beginner
+    }
+    // we also set the level here
+    set_cookie(cookie_names.level, level, 365);
+    return level;
 }
