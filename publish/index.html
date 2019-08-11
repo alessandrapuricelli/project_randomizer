@@ -22,15 +22,15 @@
 
     <div class="main">
       <div class="info" id="info"></div>
-      <div class="timer">
+      <div class="timer" >
         <div class="info_text center-item" id="timer"></div>
       </div>
       <div class="btn c1r4 center-item" id="points">
         POINTS
       </div>
 
-      <div class="btn c2r4 center-item" onclick="quit()">
-        QUIT
+      <div class="btn c2r4 center-item">
+        <a href="/settings/index.html">QUIT</a>
       </div>
       <div class="btn c3r4 center-item" onclick="finish()">
         FINISH
@@ -45,21 +45,9 @@
         R A N D O M I Z E R !</a>
     </div>
 
-    <div class="quit" id="quit">
-      <div class="quit-text">
-        <p>Are you sure you don’t want to create anymore? <br>
-          Your production could decrese while others designers are improving</p>
-      </div>
-        <div class="btn center-item quit-btn-left">
-          <a href="/index.html">QUIT</a>
-        </div>
 
-        <div class="btn center-item quit-btn-right" onclick="resume()">
-          RESUME
-        </div>
-    </div>
     <script src="../js/utils.js"></script>
-    <script src="../js/randomizer.js"></script>
+    <script src="../js/publish.js"></script>
 </body>
 
 </html>

@@ -210,9 +210,9 @@ function random(){
 //   }
 // }
 
-const beginner = [180, 240, 300];
-const intermediate = [60, 90, 120];
-const expert = [20, 30, 40];
+const beginner = [35, 40, 45];
+const intermediate = [20, 25, 30];
+const expert = [5, 10, 15];
 const timings = { beginner, intermediate, expert }
 
 function set_timers(level) {

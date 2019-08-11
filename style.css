@@ -276,3 +276,38 @@ classes: they describe the position in the grid by column and row number
     background-color: whitesmoke;
     text-align: center;
 }
+
+
+.quit{
+    display: none;
+    position: fixed;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    width: 100%;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    background-color: #dddddddd;
+
+}
+
+.quit-text{
+
+    grid-column: 1 / 5;
+    grid-row: 4 / 6;
+    text-align: center;
+    padding: 0 5% 0 5%;
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+.quit-btn-right{
+
+    grid-column: 3 / 4;
+    grid-row: 7 / 8;
+}
+.quit-btn-left{
+
+    grid-column: 2 / 3;
+    grid-row: 7 / 8;
+}
