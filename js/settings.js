@@ -1,7 +1,7 @@
 // TOPIC
 const art_a = [
   { name: 'a_1', text_info: '1', images_link: 'a' },
-  { name: 'a_2', text_info: '2', images_link: '' },
+  { name: 'a_2', text_info: '2', images_link: 'b' },
   { name: 'a_3', text_info: '3', images_link: 'c' },
   { name: 'a_4', text_info: '4', images_link: 'd' },
   { name: 'a_5', text_info: '5', images_link: 'e' },
@@ -13,7 +13,7 @@ const art_a = [
 ]
 const art_b = [
   { name: 'b_1', text_info: '1', images_link: 'a' },
-  { name: 'b_2', text_info: '2', images_link: '' },
+  { name: 'b_2', text_info: '2', images_link: 'b' },
   { name: 'b_3', text_info: '3', images_link: 'c' },
   { name: 'b_4', text_info: '4', images_link: 'd' },
   { name: 'b_5', text_info: '5', images_link: 'e' },
@@ -25,7 +25,7 @@ const art_b = [
 ]
 const fashion_a = [
   { name: 'a_1', text_info: '1', images_link: 'a' },
-  { name: 'a_2', text_info: '2', images_link: '' },
+  { name: 'a_2', text_info: '2', images_link: 'b' },
   { name: 'a_3', text_info: '3', images_link: 'c' },
   { name: 'a_4', text_info: '4', images_link: 'd' },
   { name: 'a_5', text_info: '5', images_link: 'e' },
@@ -37,7 +37,7 @@ const fashion_a = [
 ]
 const fashion_b = [
   { name: 'b_1', text_info: '1', images_link: 'a' },
-  { name: 'b_2', text_info: '2', images_link: '' },
+  { name: 'b_2', text_info: '2', images_link: 'b' },
   { name: 'b_3', text_info: '3', images_link: 'c' },
   { name: 'b_4', text_info: '4', images_link: 'd' },
   { name: 'b_5', text_info: '5', images_link: 'e' },
@@ -49,7 +49,7 @@ const fashion_b = [
 ]
 const music_a = [
   { name: 'a_1', text_info: '1', images_link: 'a' },
-  { name: 'a_2', text_info: '2', images_link: '' },
+  { name: 'a_2', text_info: '2', images_link: 'b' },
   { name: 'a_3', text_info: '3', images_link: 'c' },
   { name: 'a_4', text_info: '4', images_link: 'd' },
   { name: 'a_5', text_info: '5', images_link: 'e' },
@@ -61,7 +61,7 @@ const music_a = [
 ]
 const music_b = [
   { name: 'b_1', text_info: '1', images_link: 'a' },
-  { name: 'b_2', text_info: '2', images_link: '' },
+  { name: 'b_2', text_info: '2', images_link: 'b' },
   { name: 'b_3', text_info: '3', images_link: 'c' },
   { name: 'b_4', text_info: '4', images_link: 'd' },
   { name: 'b_5', text_info: '5', images_link: 'e' },
@@ -298,13 +298,13 @@ function get_settings() {
   // set the combination settings
   switch (result['topic']) {
     case 'art':
-      result['topic'] = { art: [get_random_element_from_array(art_a), get_random_element_from_array(art_a)] };
+      result['topic'] = { art: [get_random_element_from_array(art_a), get_random_element_from_array(art_b)] };
       break;
     case 'music':
-      result['topic'] = { music: [get_random_element_from_array(music_a), get_random_element_from_array(music_a)] };
+      result['topic'] = { music: [get_random_element_from_array(music_a), get_random_element_from_array(music_b)] };
       break;
     case 'fashion':
-      result['topic'] = { fashion: [get_random_element_from_array(fashion_a), get_random_element_from_array(fashion_a)] };
+      result['topic'] = { fashion: [get_random_element_from_array(fashion_a), get_random_element_from_array(fashion_b)] };
       break;
   }
 
