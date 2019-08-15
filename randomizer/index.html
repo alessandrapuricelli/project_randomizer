@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>project randomizer</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="../js/libs/jquery-3.3.1.min.js"></script>
+
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="head">
+      <a href="/index.html">! P R O J E C T R A N D O M I Z E R ! ! P R O J E C T R A N D O M I Z E R ! ! P R O J E C T
+        R A N D O M I Z E R !</a>
+    </div>
+
+    <div class="main">
+      <div class="info" id="info"></div>
+      <div class="timer center-item" id="timer">
+      </div>
+      <div class="btn c1r4 center-item" id="points">
+        POINTS
+      </div>
+
+      <div class="btn c2r4 center-item" onclick="quit()">
+        QUIT
+      </div>
+      <div class="btn c3r4 center-item" onclick="finish()">
+        FINISH
+      </div>
+    </div>
+
+
+    <div class="foot">
+
+      <a href="/index.html">! P R O J E C T R A N D O M I Z E R ! ! P R O J E C T R A N D O M I Z E R ! ! P R O J E C
+        T
+        R A N D O M I Z E R !</a>
+    </div>
+
+    <div class="quit" id="quit">
+      <div class="quit-text">
+        <p>Are you sure you don’t want to create anymore? <br>
+          Your production could decrese while others designers are improving</p>
+      </div>
+        <div class="btn center-item quit-btn-left">
+          <a href="/index.html">QUIT</a>
+        </div>
+
+        <div class="btn center-item quit-btn-right" onclick="resume()">
+          RESUME
+        </div>
+    </div>
+    <script src="../js/utils.js"></script>
+    <script src="../js/randomizer.js"></script>
+</body>
+
+</html>

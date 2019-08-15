@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:200,500');
+/* @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:200,500'); */
+
+@font-face {
+    font-family: 'suisse';
+    src: url('font/SuisseIntl-Regular.otf');
+}
 
 * {
     box-sizing: border-box;
@@ -11,90 +16,236 @@ html {
 body {
     margin: 0px;
     padding: 0px;
-
     /* font-family: 'Libre Barcode 39', cursive; */
-
     /*font-family: 'IBM Plex Mono', monospace;/*
     /*font-family: 'Archivo Black', sans-serif;*/
-    font-family: 'Chivo', sans-serif;
-
+    font-family: 'suisse', Helvetica, sans-serif;
+    /* font-family: sans-serif; */
+    background-color: #ddd;
     font-weight: 400;
-    color: blueviolet;
-    text-align: center;
-    font-size: 1.1rem;
+    color: #000;
+    /* text-align: center; */
+    font-size: 1rem;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
 
 .container {
     display: grid;
-    grid-template-rows: 1fr 3fr repeat(3, 1fr);
+    grid-template-rows: 50px 1fr 50px;
     grid-template-columns: 1fr;
-    grid-template-areas: "title" "setting" "time" "break" "button";
+    grid-template-areas: "head" "main" "foot";
     width: 100%;
     height: 100vh;
-
-
 }
-/* qui cambi le impostazioni per i titolo */
-.title {
-    grid-area: title;
 
-    background-color: blueviolet;
+/* qui cambi le impostazioni per il titolo */
+
+.head, .foot {
+    font-size: 0.75rem;
+}
+
+.head {
+    grid-area: head;
     font-weight: 400;
-    color: white
-    /*font-size: 1.5rem;*/
+    /* font-size: 40px; */
+    border-bottom: solid 2px #000;
+    /* color: white */
+}
+
+.foot {
+    grid-area: foot;
+    border-top: solid 2px #000;
+}
+
+.main {
+    grid-area: main;
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+}
+.loaded-img{
+    grid-column: 1 / 5;
+    grid-row: 1 / 8;
+    width: 50%;
+    height: auto;
+    margin: auto;
+}
+
+/* 
+to adress single cell of the main grid use the following 
+classes: they describe the position in the grid by column and row number
+*/
+
+.c1r4 {
+    grid-column: 1 / 2;
+    grid-row: 7 / 8;
+}
+
+.c2r4 {
+    grid-column: 2 / 3;
+    grid-row: 7 / 8;
+}
+
+.c3r4 {
+    grid-column: 3 / 4;
+    grid-row: 7 / 8;
+}
+
+.c4r4 {
+    grid-column: 4 / 5;
+    grid-row: 7 / 8;
+}
+
+.description {
+    grid-column: 1 / 3;
+    grid-row: 1 / 5;
+    padding: 1rem;
+}
+
+.level {
+    z-index: 999999;
+    grid-column: 1 / 3;
+    grid-row: 1 / 4;
+    /* add background to cover start button */
+    /* background-color: aquamarine; */
+    /* display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); */
+    display: flex;
+    flex-direction: row;
+}
+
+.pragrphs {
+    width: 50%;
+    padding: 5px;
+}
+
+.btns {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+
+
+.hidden-main, .hidden-footer {
+    visibility: collapse;
 }
 
 .setting {
-    grid-area: setting;
+    grid-column: 1 / 5;
     display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: 200px repeat(3, 1fr);
-    grid-template-areas: "cat 1 1 1" "cat 2 2 2" "cat 3 3 3";
-
-    /*font-family: 'Poppins', sans-serif;*/
-    background-color:whitesmoke;
-    border-top: solid 2px blueviolet;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "cat item1 item2 item3";
+    grid-row: 3 / 4;
 }
 
-.time {
-    grid-area: time;
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 200px repeat(3, 1fr);
-    grid-template-areas: "cat 1 1 1";
-
-
-    background-color:whitesmoke;
-    border-top: solid 2px blueviolet;
+.item-1 {
+    grid-area: item1;
 }
 
-.break {
-    grid-area: break;
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 200px repeat(3, 1fr);
-    grid-template-areas: "cat 1 1 1";
-
-
-    /*border-top: solid 2px blueviolet;*/
-    background-color:whitesmoke;
+.item-2 {
+    grid-area: item2;
 }
 
-.start {
-    grid-area: button;
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 200px repeat(2, 1fr);
-    grid-template-areas: "cat 1 1 ";
-
-
-    background-color:whitesmoke;
-    border-top: solid 2px blueviolet;
+.item-3 {
+    grid-area: item3;
 }
 
-/* align all element to the center */
+.setting-cat {
+    grid-area: cat;
+}
 
-div[class*='setting-'], .btn, .category, .title, .radio {
+.recap, .links{
+    grid-row: 1 / 7;
+    display: grid;
+}
+
+.recap{
+    grid-column: 1 / 5;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: 25% 1fr;
+}
+
+.recap_title{
+
+}
+
+.recap_content{
+
+}
+
+.links{
+    grid-column: 1 / 5;
+    grid-template-columns: repeat(4, 1fr);
+}
+.links-txt{
+    padding: 1rem;
+}
+#links-a{
+
+}
+#links-b{
+
+}
+.timer {
+    grid-column: 1 / 5;
+    grid-row: 4 / 5;
+    background-color: #000;
+    color: #ddd;
+    margin: auto;
+    width: 99%;
+    height: 50px;
+    border-radius: 25px;
+
+    letter-spacing: 10px;
+}
+
+.big-btn{
+
+    grid-column: 2 / 4;
+    grid-row: 5 / 7;
+    text-align: center;
+    background-color: #ddd;
+}
+
+#home{
+    display: none;
+}
+
+.info {
+    grid-column: 1 / 3;
+    grid-row: 1 / 4;
+    padding: 1rem;
+    line-height: 1.75rem;
+}
+
+.motivation-text{
+    grid-column: 1 / 5;
+    grid-row: 3 / 4;
+    background-color: #dddddd
+}
+
+.motivation-text a{
+    color: #f00;
+}
+
+/* .info_text {
+    font-size: 2rem;
+    font-family: monospace;
+} */
+
+/* set item in the center of the div 
+    set light or dark color for divs
+*/
+
+.center-item {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -103,35 +254,29 @@ div[class*='setting-'], .btn, .category, .title, .radio {
     align-content: stretch;
 }
 
-.setting-cat {
-    grid-area: cat;
+
+.dark{
+    background-color: #000;
+    color: #ddd;
 }
 
-.setting-1 {
-    grid-area: 1;
+.lighten{
+    border: solid 2px #aaa !important;
+    color: #aaa;
 }
 
-.setting-2 {
-    grid-area: 2;
-}
-
-.setting-3 {
-    grid-area: 3;
-}
-
-
-.btn {
+.btn, .info-text {
+    margin: auto;
     width: 85%;
     height: auto;
     min-height: 50px;
     text-align: center;
-    border: solid 2px blueviolet;
+    border: solid 2px #000;
     border-radius: 25px;
+    text-transform: uppercase;
 }
-
-
 .btn .radio {
-    background-color: transparent;
+    /* background-color: transparent; */
     width: 100%;
     height: 100%;
     padding: 0.5rem;
@@ -139,60 +284,93 @@ div[class*='setting-'], .btn, .category, .title, .radio {
     border-radius: 25px;
 }
 
-
 .radio:hover, .btn:hover {
     cursor: pointer;
-    /* cursor: url(cursor_manina.png), pointer; */
-    background-color:lightgray;
-    /*color: orangered;*/
+    /* cursor: url(img/cursor_manina.png), pointer; */
+    /* background-color: lightgray; */
+    color: orangered;
 }
-
+/* don't touch this!!!! */
 .btn input[type=radio] {
     display: none;
 }
 
 .btn input[type=radio]:checked+.radio {
-    background-color: lightgrey ;
+    /* 
+        qui setti come deve essere visualizzata una opzione selezionata
+    */
+    /* background-color: rgb(231, 19, 19); */
+    color: orangered;
+    /* text-decoration: underline 3px orangered */
+    text-shadow: #000 3px 3px 3px
 }
 
 .category {
     width: 90%;
     height: auto;
     min-height: 50px;
-
-
-    background-color:whitesmoke;
+    background-color: whitesmoke;
     text-align: center;
-
 }
 
-.timer {
+/* 
+this is for the quit page on the randomizer
+*/
+.quit{
     display: none;
     position: fixed;
-    top: 50%;
-    left: 50%;
-    width: auto;
-    min-width: 500px;
-    height: auto;
-    /*height: auto;*/
-    transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    background-color: blueviolet;
-    border: solid 2px orange;
-    border-radius: 80px;
-    color: orange;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    width: 100%;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    background-color: #dddddddd;
+
 }
 
-.timer p {
+.quit-text{
+
+    grid-column: 1 / 5;
+    grid-row: 4 / 6;
     text-align: center;
-    /* font-size: 3.5rem; */
-    color:orange;
+    padding: 0 5% 0 5%;
+    font-style: italic;
+    font-size: 1.5rem;
 }
-#timer-min{
-    font-size: 5rem;
-    padding: 4rem;
-    font-weight: 400;
-    color:orange;
+
+.quit-btn-right{
+
+    grid-column: 3 / 4;
+    grid-row: 7 / 8;
+}
+.quit-btn-left{
+
+    grid-column: 2 / 3;
+    grid-row: 7 / 8;
+}
+
+
+/* PUBLISH BUTTON */
+
+
+.input-file{
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.input-file + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.input-file:focus + label,
+.input-file + label:hover {
+    cursor: pointer;
+    /* background-color: red; */
 }
