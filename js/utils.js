@@ -9,8 +9,8 @@ const level_names = {
     beginner: 'beginner', intermediate: 'intermediate', expert: 'expert'
 }
 
-function set_cookie(name, cvalue, exdays) {
-    localStorage.setItem(name, cvalue)
+function set_cookie(item_name, cvalue, exdays) {
+    localStorage.setItem(item_name, cvalue)
     // const d = new Date();
     // d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
     // const expires = "expires=" + d.toUTCString();
@@ -84,7 +84,7 @@ set_money_div();
 
 function set_money_div() {
     let points = get_cookie(cookie_names.points);
-    if (points === '' || points === null) points = 0
+    if (points === '' || points === null || isNaN(points)) points = 0;
     document.getElementById('points').innerText = points + ' POINTS';
 }
 

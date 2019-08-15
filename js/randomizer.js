@@ -24,7 +24,6 @@ function init() {
 
     clearInterval(timer);
     settings = JSON.parse(read_settings());
-    console.log(settings);
     start_timer(settings.time, document.getElementById('timer'))
     set_info(settings);
 }
@@ -33,9 +32,14 @@ init();
 
 function set_info(settings) {
     const info = document.getElementById('info');
-    let info_text = ''
+    let info_text = '';
     Object.keys(settings).forEach(key => {
-        info_text += key + ': ' + settings[key] + '\n';
+        let setting = settings[key];
+        if (key === 'topic') {
+            const topic_name = Object.keys(setting)[0];
+            setting = topic_name + ' >> ' + setting[topic_name][0].name + ' + ' + setting[topic_name][1].name;
+          }
+        info_text += key + ': ' + setting + '\n';
     })
     info.innerText = info_text;
 }

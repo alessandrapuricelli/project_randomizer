@@ -188,28 +188,6 @@ function random(){
   next_settings();
 }
 
-// function set_initial_settings() {
-//   console.log('set random settings');
-//   const ids = ['topic', 'colors', 'typo'];
-//   for (const id of ids) {
-//     const setting = document.getElementById(id).children;
-//     // console.log(setting);
-//     let idx = 0;
-//     for (const item of setting) {
-//       // console.log(item);
-//       const label = $(item).find('label.radio');
-//       // console.log(label);
-//       if (label.length > 0) {
-//         const txt = get_random_element_from_array(settings[id][idx]);
-//         // console.log(txt);
-//         $(label).text(txt);
-//         idx++;
-//         if (idx > 2) break;
-//       }
-//     }
-//   }
-// }
-
 const beginner = [35, 40, 45];
 const intermediate = [20, 25, 30];
 const expert = [5, 10, 15];

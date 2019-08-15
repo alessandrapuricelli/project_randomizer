@@ -51,6 +51,23 @@ function finish(txt) {
     home_btn.style.display = 'flex'
 }
 
+function make_caption(){
+    const settings = JSON.parse(read_settings());
+    console.log(settings);
+    let info_text = '';
+    Object.keys(settings).forEach(key => {
+        let setting = settings[key];
+        if (key === 'topic') {
+            const topic_name = Object.keys(setting)[0];
+            setting = topic_name + ' >> ' + setting[topic_name][0].name + ' + ' + setting[topic_name][1].name;
+          }else if(key === 'time'){
+              setting += ' minutes';
+          }
+        info_text += key + ': ' + setting + '\n';
+    })
+    return info_text
+}
+
 /*
 
 888888888888  88        88  88b           d88  88888888ba   88           88888888ba
@@ -98,11 +115,12 @@ $('#img-loader').on('change', function (event) {
 
 
 });
+
 function post_image() {
     const form_data = new FormData();
     const file_field = document.querySelector('input[type="file"]');
-    const caption = 'caption'; // here I need to add a caption that will be published on tumblr
-    form_data.append('caption', 'abc123');
+    const caption = make_caption(); // here I need to add a caption that will be published on tumblr
+    form_data.append('caption', caption);
     form_data.append('image', file_field.files[0]);
     const options = {
         method: 'POST',
@@ -122,10 +140,8 @@ function post_image() {
             return response.text()
         })
         .then(response => {
-            console.log(response);
-
-            console.log('object');
-            const finish_text = 'Thank you for your poster!<br>Don’t waste time, make a new one<br><br>your poster can be seen<a href="' + response + '">HERE</a>';
+            // console.log(response);
+            const finish_text = 'Thank you for your poster!<br>Don’t waste time, make a new one<br><br>your poster can be seen <a href="' + response + '" target="_blank" rel="noopener noreferrer">HERE</a>';
             const motivation = document.getElementById('motivation');
             motivation.innerHTML = finish_text;
 
@@ -134,9 +150,11 @@ function post_image() {
 
             const home_btn = document.getElementById('home')
             home_btn.style.display = 'flex';
-
-            points += parseInt(get_cookie(cookie_names.points));
-            set_cookie(cookie_names.points, points, 365);
+            let user_points = get_cookie(cookie_names.points);
+            console.log(user_points);
+            user_points = user_points === null ? 0 : user_points;
+            points += parseInt(user_points);
+            set_cookie(cookie_names.points, points);
             set_money_div()
         })
         .catch(error => console.error('Error:', error))
