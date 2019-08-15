@@ -41,7 +41,10 @@ start_timer(3, timer_div);
 function finish(txt) {
     console.log(txt);
     const motivation = document.getElementById('motivation');
-    motivation.innerText = txt;
+    motivation.style.display = 'none';
+    const finish_div = document.getElementById('finish-text');
+    finish_div.innerText = txt;
+    finish_div.style.display = 'flex';
     timer_div.style.display = 'none';
 
     const publish = document.getElementById('publish');
@@ -51,19 +54,20 @@ function finish(txt) {
     home_btn.style.display = 'flex'
 }
 
-function make_caption(){
+function make_caption() {
     const settings = JSON.parse(read_settings());
-    console.log(settings);
+    const level = get_cookie(cookie_names.level)
     let info_text = '';
+    info_text += level + '\n\n'
     Object.keys(settings).forEach(key => {
         let setting = settings[key];
         if (key === 'topic') {
             const topic_name = Object.keys(setting)[0];
-            setting = topic_name + ' >> ' + setting[topic_name][0].name + ' + ' + setting[topic_name][1].name;
-          }else if(key === 'time'){
-              setting += ' minutes';
-          }
-        info_text += key + ': ' + setting + '\n';
+            setting = topic_name;
+        } else if (key === 'time') {
+            setting += ' minutes';
+        }
+        info_text += setting + '\n\n';
     })
     return info_text
 }
@@ -104,6 +108,14 @@ $('#img-loader').on('change', function (event) {
         event_2.preventDefault();
         // console.dir(event_2);
         $('#loaded-image').attr('src', event_2.target.result);
+
+        timer_div.style.display = 'none';
+
+        const motivation = document.getElementById('motivation');
+        motivation.style.display = 'none';
+
+        const publish = document.getElementById('publish');
+        publish.style.display = 'none';
         // console.log(event_2.target);
         post_image();
         // assign points
@@ -141,12 +153,12 @@ function post_image() {
         })
         .then(response => {
             // console.log(response);
-            const finish_text = 'Thank you for your poster!<br>Don’t waste time, make a new one<br><br>your poster can be seen <a href="' + response + '" target="_blank" rel="noopener noreferrer">HERE</a>';
-            const motivation = document.getElementById('motivation');
-            motivation.innerHTML = finish_text;
-
-            const publish = document.getElementById('publish');
-            publish.style.display = 'none';
+            const finish_text = '<p>Thank you for your poster!<br>Don’t waste time, make a new one<br><br>your poster can be seen <a href="' + response + '" target="_blank" rel="noopener noreferrer">HERE</a></p>';
+            // const motivation = document.getElementById('motivation');
+            // motivation.innerHTML = finish_text;
+            const finish_div = document.getElementById('finish-text');
+            finish_div.innerHTML = finish_text;
+            finish_div.style.display = 'flex';
 
             const home_btn = document.getElementById('home')
             home_btn.style.display = 'flex';

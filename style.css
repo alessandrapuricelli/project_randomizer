@@ -72,8 +72,9 @@ a {
 .loaded-img{
     grid-column: 1 / 5;
     grid-row: 1 / 8;
-    width: 50%;
-    height: auto;
+    height: 75%;
+    width: auto;
+    max-width: 1000px;
     margin: auto;
 }
 
@@ -229,11 +230,22 @@ classes: they describe the position in the grid by column and row number
 .motivation-text{
     grid-column: 1 / 5;
     grid-row: 3 / 4;
-    background-color: #dddddd
 }
 
-.motivation-text a{
+.motivation-text a, .finish-text a{
     color: #f00;
+}
+
+.finish-text{
+    display: none;
+    grid-column: 1 / 5;
+    grid-row: 3 / 5;
+    /* border-radius: 50%; */
+}
+.finish-text p{
+
+    background-color: #ddd;
+    padding: 1rem;
 }
 
 /* .info_text {
