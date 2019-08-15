@@ -46,8 +46,8 @@ function start_timer(duration, display) {
     let minutes = duration - 1;
     let seconds = 59;
     let cents = 99;
-    const initial_value = parseInt(get_cookie(cookie_names.money))
-    let earnings = isNaN(initial_value) ? 0 : initial_value;
+    // const initial_value = parseInt(get_cookie(cookie_names.money))
+    // let earnings = isNaN(initial_value) ? 0 : initial_value;
     display.innerText = duration + ":00:00";
     timer = setInterval(function () {
         seconds = seconds < 10 ? "0" + seconds : seconds;
@@ -67,9 +67,8 @@ function start_timer(duration, display) {
                 seconds = 59;
             }
             if (minutes < 0) {
+                // if timer done is set to true the user doesn't get any extra points for being faster
                 timer_done = true;
-                // do something when timer is 0
-                // go to next page
                 finish();
             }
         }
@@ -81,7 +80,7 @@ function finish() {
     clearInterval(timer);
     // this should e done when the poster has been published
     // find a way to transmit the poits to next page, maybe use localStorage
-    let points = parseInt(get_cookie(cookie_names.points));
+    let points = 0;
     const level = get_cookie(cookie_names.level);
     if (!timer_done) {
         points += extra_points[level];
@@ -89,8 +88,9 @@ function finish() {
     points += time_to_points[settings.time];
 
     console.log(points);
-    set_cookie(cookie_names.points, points, 365);
-    console.log(window.location.origin);
+    // set_cookie(cookie_names.points, points, 365);
+    // console.log(window.location.origin);
+    localStorage.setItem(cookie_names.points, points);
     window.location.href = window.location.origin + '/publish/index.html';
 }
 

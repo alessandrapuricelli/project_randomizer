@@ -55,6 +55,10 @@ function set_money_div() {
     document.getElementById('points').innerText = points + ' POINTS';
 }
 
+function erase_points(){
+    set_cookie(cookie_names.points, 0, 365);
+}
+
 function get_level(){
     const points = get_cookie(cookie_names.points);
     let level;

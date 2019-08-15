@@ -33,6 +33,8 @@ a {
     color: inherit;
 }
 
+
+
 .container {
     display: grid;
     grid-template-rows: 50px 1fr 50px;
@@ -66,6 +68,13 @@ a {
     display: grid;
     grid-template-rows: repeat(7, 1fr);
     grid-template-columns: repeat(4, 1fr);
+}
+.loaded-img{
+    grid-column: 1 / 5;
+    grid-row: 1 / 8;
+    width: 50%;
+    height: auto;
+    margin: auto;
 }
 
 /* 
@@ -124,10 +133,6 @@ classes: they describe the position in the grid by column and row number
     align-content: space-around;
 }
 
-.lighten{
-    border: solid 2px #aaa !important;
-    color: #aaa;
-}
 
 .hidden-main, .hidden-footer {
     visibility: collapse;
@@ -198,6 +203,20 @@ classes: they describe the position in the grid by column and row number
     width: 99%;
     height: 50px;
     border-radius: 25px;
+
+    letter-spacing: 10px;
+}
+
+.big-btn{
+
+    grid-column: 2 / 4;
+    grid-row: 5 / 7;
+    text-align: center;
+    background-color: #ddd;
+}
+
+#home{
+    display: none;
 }
 
 .info {
@@ -207,12 +226,25 @@ classes: they describe the position in the grid by column and row number
     line-height: 1.75rem;
 }
 
+.motivation-text{
+    grid-column: 1 / 5;
+    grid-row: 3 / 4;
+    background-color: #dddddd
+}
+
+.motivation-text a{
+    color: #f00;
+    font-size: 2rem;
+}
+
 /* .info_text {
     font-size: 2rem;
     font-family: monospace;
 } */
 
-/* set item in the center of the div */
+/* set item in the center of the div 
+    set light or dark color for divs
+*/
 
 .center-item {
     display: flex;
@@ -221,6 +253,17 @@ classes: they describe the position in the grid by column and row number
     justify-content: space-around;
     align-items: center;
     align-content: stretch;
+}
+
+
+.dark{
+    background-color: #000;
+    color: #ddd;
+}
+
+.lighten{
+    border: solid 2px #aaa !important;
+    color: #aaa;
 }
 
 .btn, .info-text {
@@ -233,12 +276,6 @@ classes: they describe the position in the grid by column and row number
     border-radius: 25px;
     text-transform: uppercase;
 }
-
-.dark{
-    background-color: #000;
-    color: #ddd;
-}
-
 .btn .radio {
     /* background-color: transparent; */
     width: 100%;
@@ -254,7 +291,7 @@ classes: they describe the position in the grid by column and row number
     /* background-color: lightgray; */
     color: orangered;
 }
-
+/* don't touch this!!!! */
 .btn input[type=radio] {
     display: none;
 }
@@ -277,7 +314,9 @@ classes: they describe the position in the grid by column and row number
     text-align: center;
 }
 
-
+/* 
+this is for the quit page on the randomizer
+*/
 .quit{
     display: none;
     position: fixed;
@@ -310,4 +349,29 @@ classes: they describe the position in the grid by column and row number
 
     grid-column: 2 / 3;
     grid-row: 7 / 8;
+}
+
+
+/* PUBLISH BUTTON */
+
+
+.input-file{
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.input-file + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.input-file:focus + label,
+.input-file + label:hover {
+    cursor: pointer;
+    /* background-color: red; */
 }
