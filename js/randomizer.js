@@ -82,8 +82,6 @@ function start_timer(duration, display) {
 function finish() {
 
     clearInterval(timer);
-    // this should e done when the poster has been published
-    // find a way to transmit the poits to next page, maybe use localStorage
     let points = 0;
     const level = get_cookie(cookie_names.level);
     if (!timer_done) {
