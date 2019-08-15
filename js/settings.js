@@ -338,8 +338,10 @@ function get_settings() {
 
   generate_links(result['topic']);
 
-  const json = JSON.stringify(result);
-  set_cookie(cookie_names.settings, json, 365);
+  // const json = JSON.stringify(result);
+  // console.log(result);
+  // set_cookie(cookie_names.settings, json, 365);
+  write_settings_cookie(result);
   // now we should write them to a cookie to be read in the next page
 
 }

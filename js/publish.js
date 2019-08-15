@@ -1,5 +1,5 @@
-let points = parseInt(localStorage.getItem(cookie_names.points));
-
+let points = parseInt(get_cookie(cookie_names.earned_points));
+console.log(points);
 let timer;
 
 function start_timer(duration, display) {

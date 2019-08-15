@@ -23,7 +23,7 @@ const extra_points = {
 function init() {
 
     clearInterval(timer);
-    settings = JSON.parse(get_cookie(cookie_names.settings));
+    settings = JSON.parse(read_settings());
     console.log(settings);
     start_timer(settings.time, document.getElementById('timer'))
     set_info(settings);
@@ -90,7 +90,7 @@ function finish() {
     console.log(points);
     // set_cookie(cookie_names.points, points, 365);
     // console.log(window.location.origin);
-    localStorage.setItem(cookie_names.points, points);
+    set_cookie(cookie_names.earned_points, points);
     window.location.href = window.location.origin + '/publish/index.html';
 }
 
