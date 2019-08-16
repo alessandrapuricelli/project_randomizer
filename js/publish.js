@@ -142,7 +142,9 @@ function post_image() {
     // Remove 'Content-Type' header to allow browser to add
     // along with the correct 'boundary'
     // delete options.headers['Content-Type'];
-
+    //https://publish-poster.glitch.me/post
+    //https://my-nodejs-project.alessandrapuricelli.now.sh/post my-nodejs-project.alessandrapuricelli.now.sh
+    //http://127.0.0.1:5000/post
     fetch('http://127.0.0.1:5000/post', options)
         .then(response => {
             console.log(response);
