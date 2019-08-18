@@ -14,7 +14,8 @@ html {
 }
 
 body {
-    margin: 15px;
+    /* margin: 15px;*/
+    margin: 0px;
     padding: 0px;
     /* font-family: 'Libre Barcode 39', cursive; */
     /*font-family: 'IBM Plex Mono', monospace;/*
@@ -33,7 +34,12 @@ a {
     color: inherit;
 }
 
-
+.marquee-offset {
+    position: absolute;
+    width: 120%;
+    left: -10%;
+    letter-spacing: 3px;
+}
 
 .container {
     display: grid;
@@ -62,8 +68,8 @@ a {
 .foot {
     grid-area: foot;
     font-weight: 400;
-    text-align: center; 
-     /* border-top: solid 2px #000;*/
+    text-align: center;
+    /* border-top: solid 2px #000;*/
 }
 
 .main {
@@ -72,13 +78,29 @@ a {
     grid-template-rows: repeat(7, 1fr);
     grid-template-columns: repeat(4, 1fr);
 }
-.loaded-img{
+
+.loaded-img {
     grid-column: 1 / 5;
     grid-row: 1 / 8;
     height: 75%;
     width: auto;
     max-width: 1000px;
     margin: auto;
+}
+
+.about {
+    padding: 0 0.75rem 0 0.75rem;
+    grid-column: 1 / 5;
+    grid-row: 1 / 7;
+    /* Old Chrome, Safari and Opera */
+    -webkit-column-count: 3;
+    -webkit-column-gap: 40px;
+    /* Old Firefox */
+    -moz-column-count: 3;
+    -moz-column-gap: 40px;
+    /* Standard syntax */
+    column-count: 3;
+    column-gap: 40px;
 }
 
 /* 
@@ -108,7 +130,7 @@ classes: they describe the position in the grid by column and row number
 
 .description {
     grid-column: 1 / 3;
-    grid-row: 1 / 5;
+    grid-row: 1 / 8;
     padding: 1rem;
     font-size: 1.3rem;
 }
@@ -116,28 +138,30 @@ classes: they describe the position in the grid by column and row number
 .level {
     z-index: 999999;
     grid-column: 1 / 3;
-    grid-row: 1 / 4;
+    grid-row: 1 / 7;
+    padding-left: 0.75rem;
     /* add background to cover start button */
     /* background-color: aquamarine; */
     /* display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr); */
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 0.75rem 0 0.75rem;
 }
 
 .pragrphs {
-    width: 50%;
-    padding: 5px;
+    /* width: 100%; */
+    /* padding: 5px; */
+    grid-row: 1 / 5;
 }
 
 .btns {
-    width: 50%;
+    /* width: 100%; */
     display: flex;
     flex-direction: column;
     align-content: space-around;
 }
-
 
 .hidden-main, .hidden-footer {
     visibility: collapse;
@@ -167,38 +191,54 @@ classes: they describe the position in the grid by column and row number
     grid-area: cat;
 }
 
-.recap, .links{
+.recap, .links {
     grid-row: 1 / 7;
     display: grid;
 }
 
-.recap{
+.recap {
     grid-column: 1 / 5;
     grid-template-rows: repeat(7, 1fr);
     grid-template-columns: 25% 1fr;
 }
 
-.recap_title{
+.recap_title {}
 
-}
+.recap_content {}
 
-.recap_content{
-
-}
-
-.links{
+.links {
     grid-column: 1 / 5;
     grid-template-columns: repeat(4, 1fr);
 }
-.links-txt{
-    padding: 1rem;
-}
-#links-a{
 
+.links-txt {
+    font-size: 1.3rem;
+    padding: 0 0.75rem 0 0.75rem;
 }
-#links-b{
 
+.links-big{
+    text-transform: capitalize;
+    font-size: 1.3rem;
 }
+
+#links-a, #links-b {
+    padding: 0 0.45rem 0 0.45rem; 
+}
+
+#links-a a, #links-b a {
+    color: blue;
+    text-decoration: underline;
+    line-height: 1.5rem;
+}
+
+#links-a a:hover, #links-b a:hover {
+    color: red;
+    text-decoration: overline;
+}
+
+#links-b {
+}
+
 .timer {
     grid-column: 1 / 5;
     grid-row: 4 / 5;
@@ -209,19 +249,17 @@ classes: they describe the position in the grid by column and row number
     height: 50px;
     border-radius: 25px;
     font-family: 'IBM Plex Mono', monospace;
-
     letter-spacing: 10px;
 }
 
-.big-btn{
-
+.big-btn {
     grid-column: 2 / 4;
     grid-row: 5 / 7;
     text-align: center;
-    background-color:white;
+    background-color: white;
 }
 
-#home{
+#home {
     display: none;
 }
 
@@ -230,26 +268,31 @@ classes: they describe the position in the grid by column and row number
     grid-row: 1 / 4;
     padding: 1rem;
     line-height: 1.75rem;
+    text-transform: capitalize;
 }
 
-.motivation-text{
+.motivation-text {
     grid-column: 1 / 5;
     grid-row: 3 / 4;
+    font-style: italic;
+    font-size: 1.5rem;
+
+    
 }
 
-.motivation-text a, .finish-text a{
-    color:orangered;
+.motivation-text a, .finish-text a {
+    color: orangered;
 }
 
-.finish-text{
+.finish-text {
     display: none;
     grid-column: 1 / 5;
     grid-row: 3 / 5;
     /* border-radius: 50%; */
 }
-.finish-text p{
 
-    background-color:white;
+.finish-text p {
+    background-color: white;
     padding: 1rem;
 }
 
@@ -264,20 +307,19 @@ classes: they describe the position in the grid by column and row number
 
 .center-item {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     align-content: stretch;
 }
 
-
-.dark{
+.dark {
     background-color: #000;
-    color:white;
+    color: white;
 }
 
-.lighten{
+.lighten {
     border: solid 2px #aaa !important;
     color: #aaa;
 }
@@ -290,8 +332,10 @@ classes: they describe the position in the grid by column and row number
     text-align: center;
     border: solid 2px #000;
     border-radius: 25px;
-    text-transform: uppercase;
+    text-transform: capitalize;
+    font-size: 1.25rem;
 }
+
 .btn .radio {
     /* background-color: transparent; */
     width: 100%;
@@ -307,7 +351,9 @@ classes: they describe the position in the grid by column and row number
     /* background-color: lightgray; */
     color: orangered;
 }
+
 /* don't touch this!!!! */
+
 .btn input[type=radio] {
     display: none;
 }
@@ -333,7 +379,8 @@ classes: they describe the position in the grid by column and row number
 /* 
 this is for the quit page on the randomizer
 */
-.quit{
+
+.quit {
     display: none;
     position: fixed;
     grid-template-columns: repeat(4, 1fr);
@@ -343,11 +390,9 @@ this is for the quit page on the randomizer
     top: 0px;
     left: 0px;
     background-color: white;
-
 }
 
-.quit-text{
-
+.quit-text {
     grid-column: 1 / 5;
     grid-row: 4 / 6;
     text-align: center;
@@ -356,38 +401,34 @@ this is for the quit page on the randomizer
     font-size: 1.5rem;
 }
 
-.quit-btn-right{
-
+.quit-btn-right {
     grid-column: 3 / 4;
     grid-row: 7 / 8;
 }
-.quit-btn-left{
 
+.quit-btn-left {
     grid-column: 2 / 3;
     grid-row: 7 / 8;
 }
 
-
 /* PUBLISH BUTTON */
 
-
-.input-file{
+.input-file {
     width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
 }
 
-.input-file + label {
+.input-file+label {
     font-size: 1.25em;
     font-weight: 700;
     display: inline-block;
 }
 
-.input-file:focus + label,
-.input-file + label:hover {
+.input-file:focus+label, .input-file+label:hover {
     cursor: pointer;
     /* background-color: red; */
 }

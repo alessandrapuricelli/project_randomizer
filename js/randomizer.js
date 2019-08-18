@@ -20,6 +20,7 @@ const extra_points = {
     expert: 20
 }
 
+
 function init() {
 
     clearInterval(timer);
@@ -38,10 +39,13 @@ function set_info(settings) {
         if (key === 'topic') {
             const topic_name = Object.keys(setting)[0];
             setting = topic_name + ' >> ' + setting[topic_name][0].name + ' + ' + setting[topic_name][1].name;
-          }
-        info_text += key + ': ' + setting + '\n';
+        }
+        if(key === 'colors'){
+            setting = make_colored_spans(setting);
+        }
+        info_text += ''+key + ': <i>' + setting + '</i><br>';
     })
-    info.innerText = info_text;
+    info.innerHTML = info_text;
 }
 
 let timer_done = false;
@@ -96,12 +100,43 @@ function finish() {
     window.location.href = window.location.origin + '/publish/index.html';
 }
 
-function quit(){
+function quit() {
     pause = true;
     document.getElementById('quit').style.display = 'grid';
 }
 
-function resume(){
+function resume() {
     pause = false;
     document.getElementById('quit').style.display = 'none';
+}
+
+
+
+const motivation_txt = [
+    'Publish your poster! This is your only chance!',
+    '❤️',
+    '🍒',
+    '🦜',
+    '🤡',
+    '🦔'
+]
+// const speed = 100;
+const fraction = Math.PI / 50;
+let counter = 1;
+let animation = setInterval(blink_text, 20);
+
+let motivation_div = document.getElementById('motivation');
+let idx = 0;
+let next = false;
+function blink_text() {
+    const alpha = (Math.sin(counter) + 1) / 2;
+    if(alpha <= 0.06 && next){
+        motivation_div.innerText = motivation_txt[idx];
+        idx ++;
+        next = false;
+        if(idx >= motivation_txt.length)idx = 0;
+    }
+    if(alpha > 0.9) next = true;
+    motivation_div.style.color = 'rgba(0, 0, 0, ' + alpha + ')'
+    counter += fraction;
 }

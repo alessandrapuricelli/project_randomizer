@@ -30,7 +30,7 @@ function start_timer(duration, display) {
             timer_done = true;
             // finish();
             clearInterval(timer);
-            const motivation_text = 'Sorry, the time is over!\nYou can’t publish your poster anymore and you will not get the points.\nBe more careful next time, other designers are publishing instead of you.'
+            const motivation_text = 'Oh no, you failed!\nYou lost the possibility to publish your poster, and you will not get the points.\nBe more careful next time. Other designers are publishing instead of you.\nYou need to make a new poster. Believe in yourself!'
             finish(motivation_text);
         }
     }, 10);
@@ -145,7 +145,7 @@ function post_image() {
     //https://publish-poster.glitch.me/post
     //https://my-nodejs-project.alessandrapuricelli.now.sh/post my-nodejs-project.alessandrapuricelli.now.sh
     //http://127.0.0.1:5000/post
-    fetch('http://127.0.0.1:5000/post', options)
+    fetch('https://publish-to-tumlr.herokuapp.com/post', options)
         .then(response => {
             console.log(response);
             if (response.status === 500) {
@@ -155,7 +155,7 @@ function post_image() {
         })
         .then(response => {
             // console.log(response);
-            const finish_text = '<p>Thank you for your poster!<br>Don’t waste time, make a new one<br><br>your poster can be seen <a href="' + response + '" target="_blank" rel="noopener noreferrer">HERE</a></p>';
+            const finish_text = '<p>Thank you for your poster! Be proud of yourself!<br>Now you can finally use your poster to compete with other designers like you!<br>Now don’t waste time!<br>Make a new poster!<br>You can become successful!<br>Your poster can be seen <a href="' + response + '" target="_blank" rel="noopener noreferrer">HERE</a></p>';
             // const motivation = document.getElementById('motivation');
             // motivation.innerHTML = finish_text;
             const finish_div = document.getElementById('finish-text');
