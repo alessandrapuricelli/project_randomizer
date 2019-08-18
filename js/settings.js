@@ -217,7 +217,7 @@ function set_timers(level) {
   }
 
   function assign_time(arr) {
-    const minutes = ' "';//cambia questo per cambiare cosa viene scritto dopo i minuti
+    const minutes = "'";//cambia questo per cambiare cosa viene scritto dopo i minuti
     let idx = 0
     for (const child of timers) {
       const label = $(child).find('label.radio');
@@ -409,12 +409,13 @@ function generate_links(topic) {
 
     const list = document.createElement('ul');
 
-    let link_idx = 0;
+    let link_idx = 1;
     for (const link of el.images_link) {
       const list_el = document.createElement('li');
       const links_txt = document.createElement('a');
       links_txt.href = link;
-      links_txt.innerText = link_idx + '↗';
+      links_txt.setAttribute('target', '_blank');
+      links_txt.innerText = 'image___🖼';
       list_el.appendChild(links_txt);
       list.appendChild(list_el);
       link_idx++;

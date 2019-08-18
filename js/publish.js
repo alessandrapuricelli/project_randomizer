@@ -170,7 +170,7 @@ function post_image() {
             const motivation = document.getElementById('motivation');
             motivation.style.display = 'none';
             clearInterval(load_animation)
-            const finish_text = '<p>Thank you for your poster! Be proud of yourself!<br>Now you can finally use your poster to compete with other designers like you!<br>Now don’t waste time!<br>Make a new poster!<br>You can become successful!<br>Your poster can be seen <a href="' + response + '" target="_blank" rel="noopener noreferrer">HERE</a></p>';
+            const finish_text = '<p>Thank you for your poster! Be proud of yourself!<br>Now you can finally use your poster to compete with other designers like you!<br>Don’t waste time, make a new poster, every second is precious!<br>Believe in yourself, you can become successful!<br>You poster has been published <a href="' + response + '" target="_blank" rel="noopener noreferrer">HERE</a></p>';
             // const motivation = document.getElementById('motivation');
             // motivation.innerHTML = finish_text;
             const finish_div = document.getElementById('finish-text');

@@ -227,13 +227,15 @@ classes: they describe the position in the grid by column and row number
 
 #links-a a, #links-b a {
     color: blue;
-    text-decoration: underline;
-    line-height: 1.5rem;
+    /* text-decoration: underline 2px; */
+    border-bottom: solid 3px;
+    line-height: 2rem;
 }
 
 #links-a a:hover, #links-b a:hover {
-    color: red;
-    text-decoration: overline;
+    color: orangered;
+    /* border-bottom: solid 2px; */
+    /* text-decoration: overline; */
 }
 
 #links-b {
@@ -269,6 +271,19 @@ classes: they describe the position in the grid by column and row number
     padding: 1rem;
     line-height: 1.75rem;
     text-transform: capitalize;
+    display: grid;
+    grid-template-columns: max-content 80%;
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.info-left, .info-right{
+    height: 1.5rem;
+}
+
+.info-left{
+    letter-spacing: 2px; 
+    /*  */
+    /* text-decoration: underline; */
 }
 
 .motivation-text {
@@ -365,7 +380,7 @@ classes: they describe the position in the grid by column and row number
     /* background-color: rgb(231, 19, 19); */
     color: orangered;
     /* text-decoration: underline 3px orangered */
-    text-shadow: #000 3px 3px 3px
+    /* text-shadow: yellowgreen 3px 3px 3px */
 }
 
 .category {

@@ -38,12 +38,12 @@ function set_info(settings) {
         let setting = settings[key];
         if (key === 'topic') {
             const topic_name = Object.keys(setting)[0];
-            setting = topic_name + ' >> ' + setting[topic_name][0].name + ' + ' + setting[topic_name][1].name;
+            setting = topic_name + ' → ' + setting[topic_name][0].name + ' + ' + setting[topic_name][1].name;
         }
         if(key === 'colors'){
             setting = make_colored_spans(setting);
         }
-        info_text += ''+key + ': <i>' + setting + '</i><br>';
+        info_text += '<div class="info-left"> <span style="border-bottom: solid 3px;">'+key + '</span>:</div> <div class="info-right">&nbsp;&nbsp;' + setting + '</div>';
     })
     info.innerHTML = info_text;
 }
@@ -113,12 +113,12 @@ function resume() {
 
 
 const motivation_txt = [
-    'Publish your poster! This is your only chance!',
-    '❤️',
-    '🍒',
-    '🦜',
-    '🤡',
-    '🦔'
+    'You are doing great!',
+    'Think about your future!',
+    '💥',
+    'The time is running, be fast!',
+    'Think about the designer you would like to become',
+    'Where do you see yourself in 10 years?'
 ]
 // const speed = 100;
 const fraction = Math.PI / 50;
