@@ -2,6 +2,8 @@ let points = parseInt(get_cookie(cookie_names.earned_points));
 console.log(points);
 let timer;
 
+let load_animation;
+
 function start_timer(duration, display) {
     let minutes = duration - 1;
     let seconds = 59;
@@ -111,8 +113,18 @@ $('#img-loader').on('change', function (event) {
 
         timer_div.style.display = 'none';
 
-        const motivation = document.getElementById('motivation');
-        motivation.style.display = 'none';
+        const fraction = Math.PI / 50;
+        let counter = 1;
+        load_animation = setInterval(() => {
+            let motivation_div = document.getElementById('motivation');
+            motivation_div.innerText = 'Loading to the Cloud ☁️...'
+            const alpha = (Math.sin(counter) + 1) / 2;
+            motivation_div.style.color = 'rgba(0, 0, 0, ' + alpha + ')'
+            counter += fraction;
+        }, 20);
+
+
+
 
         const publish = document.getElementById('publish');
         publish.style.display = 'none';
@@ -155,6 +167,9 @@ function post_image() {
         })
         .then(response => {
             // console.log(response);
+            const motivation = document.getElementById('motivation');
+            motivation.style.display = 'none';
+            clearInterval(load_animation)
             const finish_text = '<p>Thank you for your poster! Be proud of yourself!<br>Now you can finally use your poster to compete with other designers like you!<br>Now don’t waste time!<br>Make a new poster!<br>You can become successful!<br>Your poster can be seen <a href="' + response + '" target="_blank" rel="noopener noreferrer">HERE</a></p>';
             // const motivation = document.getElementById('motivation');
             // motivation.innerHTML = finish_text;
@@ -173,3 +188,6 @@ function post_image() {
         })
         .catch(error => console.error('Error:', error))
 }
+
+
+// const speed = 100;
