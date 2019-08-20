@@ -246,7 +246,7 @@ classes: they describe the position in the grid by column and row number
     grid-row: 4 / 5;
     background-color: #000;
     color: white;
-    margin: auto;
+    margin: 0 auto;
     width: 99%;
     height: 50px;
     border-radius: 25px;
