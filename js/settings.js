@@ -1,15 +1,15 @@
 // TOPIC
 const art_a = [
   { name: 'Fall Season', text_info: 'Poster for the starting of the Fall Season 15th September 2020', images_link: ['https://unsplash.com/photos/lhnOvu72BM8', 'https://unsplash.com/photos/OHPdgstNFGs'] },
-  { name: 'Jon Rafman', text_info: 'Jon Rafman January 2020 - May 2020 The exhibition brings together a selection of multimedia installations, tracing the arc of the Canadian artist’s practice from 2011 to the present.', images_link: ['http://tiny.cc/ke19az', 'http://tiny.cc/jf19az'] },
+  { name: 'Jon Rafman', text_info: 'Jon Rafman January 2020 - May 2020 The exhibition brings together a selection of multimedia installations, tracing the arc of the Canadian artist’s practice from 2011 to the present.', images_link: ['http://tiny.cc/ke19az', 'https://tinyurl.com/y3dmy6db'] },
   { name: 'Party', text_info: 'Party / Vernissage July 2019', images_link: ['https://unsplash.com/photos/Bycd2wF5vQU', 'https://unsplash.com/photos/Xaanw0s0pMk', 'https://unsplash.com/photos/v5yPUQYbrcw'] },
   { name: 'Post Internet', text_info: 'Collective Exhibition October 2019. Images: The Importance of Eyebrows by Catharina Sonnenberg', images_link: ['http://tiny.cc/8g19az', 'http://tiny.cc/rh19az', 'http://tiny.cc/oi19az'] },
-  { name: 'Signe Pierce', text_info: 'Solo exhibition December 2019. Signe Pierce is an American artist. She has worked in performance, photography, video and digital art.', images_link: ['http://tiny.cc/lk19az', 'http://tiny.cc/4k19az', 'http://tiny.cc/wl19az'] },
+  { name: 'Signe Pierce', text_info: 'Solo exhibition December 2019. Signe Pierce is an American artist. She has worked in performance, photography, video and digital art.', images_link: ['http://tiny.cc/lk19az', 'http://tiny.cc/wl19az'] },
   { name: 'Modern Staircases', text_info: 'Exploration of staircases in modern architecture. March 2020', images_link: ['http://tiny.cc/tr19az', 'http://tiny.cc/6s19az'] },
   { name: 'Summer Night Party', text_info: 'June 2020', images_link: ['https://unsplash.com/photos/UKLIuV8rAks', 'https://unsplash.com/photos/2_BZuGgkP4k', 'https://unsplash.com/photos/7jQh3EiS8Bs'] },
   { name: 'Swiss Style Exhibition', text_info: 'October 2019. The International Typographic Style (Swiss Style) has had profound influence on graphic design as a part of the modernist movement, impacting many design-related fields including architecture and art.', images_link: ['http://tiny.cc/sx19az', 'http://tiny.cc/ty19az', 'http://tiny.cc/nz19az'] },
   { name: 'Underground Architecture', text_info: 'Brutalist Architecture today in Europe. September 2019 ', images_link: ['http://tiny.cc/t019az', 'http://tiny.cc/e219az'] },
-  { name: 'Wong Ping', text_info: '5th December 2019', images_link: ['http://tiny.cc/o519az', 'http://tiny.cc/0619az'] },
+  { name: 'Wong Ping', text_info: '5th December 2019', images_link: ['https://tinyurl.com/y3y7aupp', 'http://tiny.cc/0619az', 'https://tinyurl.com/y243glwn'] },
 ]
 const art_b = [
   { name: 'Fondazione Prada Milano', text_info: 'Exhibition x. Largo Isarco, 2, 20139 Milano, Italy' },
@@ -28,7 +28,7 @@ const fashion_a = [
   { name: 'Balenciaga', text_info: 'www.balenciaga.com', images_link: ['https://www.balenciaga.com/66/41/41897040mo_14_a_g.jpg', 'https://www.balenciaga.com/66/54/54167441os_14_a_g.jpg', 'https://www.balenciaga.com/66/39/39971168lc_14_a_g.jpg', 'http://tiny.cc/gv39az'] },
   { name: 'Contemporary Maniac', text_info: 'New fashion brand based in Copenhagen wwww.contemporarymaniac.com', images_link: ['https://unsplash.com/photos/cp-VMJ-mdKs', 'https://unsplash.com/photos/hKwQ_Gu1bSk', 'https://unsplash.com/photos/sRZ-ThDqbe8', 'https://drive.google.com/open?id=1XaC2gueLAoyYjkwBFufHyvDT8OCsx-QB'] },
   { name: 'Dazed Beauty', text_info: 'Art Photography Fashion Magazine by Dazed Digital www.dazeddigital.com/beauty', images_link: ['http://tiny.cc/x139az', 'http://tiny.cc/s239az', 'http://tiny.cc/w339az'] },
-  { name: 'Gucci', text_info: 'www.gucci.com', images_link: ['https://tinyurl.com/y45j8khg', 'https://tinyurl.com/y3wflwvj', 'https://tinyurl.com/y53g5l8v', 'https://tinyurl.com/y5drxrd4'] },
+  { name: 'Gucci', text_info: 'www.gucci.com', images_link: ['https://tinyurl.com/y45j8khg', 'https://tinyurl.com/y34axdv8', 'https://tinyurl.com/y4fzmp7a', 'https://tinyurl.com/y5drxrd4'] },
   { name: 'Neural', text_info: 'New fashion brand based in Stockholm wwww.neural.com', images_link: ['https://unsplash.com/photos/k1vmVCuxLss', 'https://unsplash.com/photos/QY3MlQzMKOU', 'https://unsplash.com/photos/lGG_vMu4fS4', 'https://drive.google.com/open?id=1S6jiQsib0eVAooF_ZVemQB29nrlI8eay'] },
   { name: 'Nike', text_info: 'www.nike.com', images_link: ['https://tinyurl.com/yxwgn4yd', 'https://tinyurl.com/y437m7rj', 'https://tinyurl.com/yy3wqfcw', 'https://tinyurl.com/y3w3vcqe'] },
   { name: 'Nike secret shoes launch', text_info: 'www.nike.com', images_link: ['https://tinyurl.com/y3w3vcqe'] },
@@ -44,7 +44,7 @@ const fashion_b = [
   { name: 'Fondazione Prada', text_info: 'Brand Party @ Fondazione Prada. Largo Isarco, 2, 20139 Milano MI, Italia 7/9/2019' },
   { name: 'Temporary Store', text_info: 'Brand x temporary store in Zurich. December 2019 place TBA' },
   { name: 'Balenciaga collaboration', text_info: 'Brand x collaboration with Balenciaga. Available on December 2019', images_link: ['https://tinyurl.com/yy5vhs7w', 'https://tinyurl.com/y6xamko7', 'https://tinyurl.com/yxaabcrj', 'http://tiny.cc/gv39az'] },
-  { name: 'Nike collaboration', text_info: 'Brand x collaboration with Nike. Available on December 2019', images_link: ['https://tinyurl.com/y3hmzo8t', 'https://tinyurl.com/y53kzkj4', 'https://tinyurl.com/y3av6exp', 'https://tinyurl.com/y3w3vcqe'] },
+  { name: 'Nike collaboration', text_info: 'Brand x collaboration with Nike. Available on December 2019', images_link: ['https://tinyurl.com/y53kzkj4', 'https://tinyurl.com/y3av6exp', 'https://tinyurl.com/y3w3vcqe'] },
   { name: 'Prada collaboration', text_info: 'Brand x collaboration with Prada. Available on December 2019', images_link: ['https://tinyurl.com/y5amapls', 'https://tinyurl.com/y2rofuh6', 'https://tinyurl.com/yy5o84fw', 'https://tinyurl.com/yxken9qt'] },
 ]
 const music_a = [
@@ -55,8 +55,8 @@ const music_a = [
   { name: 'DJ Magic', text_info: 'DJ Magic from the Netherlands. Electronic music', images_link: ['https://unsplash.com/photos/m41k1lTzjVM', 'https://unsplash.com/photos/zbUvPw1wUIw', 'https://unsplash.com/photos/iTZOPe7BpTM'] },
   { name: 'Melt!', text_info: 'Melt! is a music festival that change location every year. Line up TBA', images_link: ['https://unsplash.com/photos/DMaOGYRS4_U', 'https://unsplash.com/photos/l28IKbjb7oc', 'https://unsplash.com/photos/xSTQzSLJA4c', 'https://drive.google.com/open?id=1Gl0Q6-y0uLE2i5oJ8R4aUv0cnOgyL2Yd'] },
   { name: 'Fate Club', text_info: 'Party Organisers in different locations. Location TBA', images_link: ['https://unsplash.com/photos/vCbKwN2IXT4', 'https://unsplash.com/photos/dR_hXZBkwXg', 'https://unsplash.com/photos/93BHnsK4PbI', 'https://drive.google.com/open?id=1poCnGUsw_SxvMTNh9fg3J5an-s0ff1B8'] },
-  { name: 'Salut C’est Cool', text_info: 'Salut C’est Cool is a group of four French musicians from Paris. www.salutcestcool.com', images_link: ['https://tinyurl.com/y688ywx2', 'https://tinyurl.com/y385b2sx', 'https://tinyurl.com/y6cj9rgw'] },
-  { name: 'Sporting Life', text_info: 'Sporting Life, is an American artist, architect, and record producer from New York City.', images_link: ['https://tinyurl.com/y3kpznfh', 'https://tinyurl.com/y5kwcw7d'] },
+  { name: 'Salut C’est Cool', text_info: 'Salut C’est Cool is a group of four French musicians from Paris. www.salutcestcool.com', images_link: ['https://tinyurl.com/y6ek92e4', 'https://tinyurl.com/y4qcmetq', 'https://tinyurl.com/y6s7ejah'] },
+  { name: 'Sporting Life', text_info: 'Sporting Life, is an American artist, architect, and record producer from New York City.', images_link: ['https://tinyurl.com/y3kpznfh', 'https://tinyurl.com/yxgoeyb3'] },
   { name: 'Tyler, the Creator', text_info: 'Tyler, the Creator, is an American rapper, singer, songwriter, record producer, music video director, fashion designer and graphic designer.golfwang.com', images_link: ['https://tinyurl.com/yxhqq5on', 'https://tinyurl.com/y2u3cq88', 'https://i.ytimg.com/vi/C67JLkuvVx4/maxresdefault.jpg'] },
 ]
 const music_b = [
