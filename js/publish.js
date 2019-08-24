@@ -32,7 +32,7 @@ function start_timer(duration, display) {
             timer_done = true;
             // finish();
             clearInterval(timer);
-            const motivation_text = 'Oh no, you failed!\nYou lost the possibility to publish your poster, and you will not get the points.\nBe more careful next time. Other designers are publishing instead of you.\nYou need to make a new poster. Believe in yourself!'
+            const motivation_text = 'Oh no, you failed!\nYou lost the chance to publish your poster, and you will not get the points.\nBe more careful next time. Other designers are publishing instead of you.\nYou need to make a new poster. Believe in yourself!'
             finish(motivation_text);
         }
     }, 10);

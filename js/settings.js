@@ -415,7 +415,7 @@ function generate_links(topic) {
       const links_txt = document.createElement('a');
       links_txt.href = link;
       links_txt.setAttribute('target', '_blank');
-      links_txt.innerText = 'image___🖼';
+      links_txt.innerText = 'image';
       list_el.appendChild(links_txt);
       list.appendChild(list_el);
       link_idx++;

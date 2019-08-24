@@ -115,7 +115,6 @@ function resume() {
 const motivation_txt = [
     'You are doing great!',
     'Think about your future!',
-    '💥',
     'The time is running, be fast!',
     'Think about the designer you would like to become',
     'Where do you see yourself in 10 years?'
