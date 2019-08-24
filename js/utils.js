@@ -2,11 +2,11 @@
 let speed = 0;
 speed = 50 + (Math.floor(Math.random() * 3) * 10);
 const head = document.getElementById('head')
-head.innerHTML = '<marquee scrolldelay="'+speed+'" behavior="alternate" truespeed class="marquee-offset"><a href="/index.html">RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR RANDOM POSTERGENERATOR RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR</a></marquee>';
+head.innerHTML = '<marquee scrolldelay="' + speed + '" behavior="alternate" truespeed class="marquee-offset"><a href="/index.html">RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR RANDOM POSTERGENERATOR RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR</a></marquee>';
 
 speed = 50 + (Math.floor(Math.random() * 3) * 10);
 const foot = document.getElementById('foot')
-foot.innerHTML = '<marquee scrolldelay="'+speed+'" behavior="alternate" truespeed class="marquee-offset"><a href="/index.html">RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR RANDOM POSTERGENERATOR RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR</a></marquee>';
+foot.innerHTML = '<marquee scrolldelay="' + speed + '" behavior="alternate" truespeed class="marquee-offset"><a href="/index.html">RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR RANDOM POSTERGENERATOR RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR</a></marquee>';
 
 
 
@@ -119,17 +119,94 @@ function get_level() {
     return level;
 }
 
-function make_colored_spans(string){
+function make_colored_spans(string) {
     console.log(string);
-    if(string === 'Black and White'){
+    if (string === 'Black and White') {
         return '<span style="color:#000">Black and White</span>';
-    }else{
+    } else {
         const colors = string.split(' + ');
         console.log(colors);
         let result = '';
         for (const color of colors) {
-           result += '<span style="color:'+color+'">'+color+'&nbsp</span> '
+            result += '<span style="color:' + color + '">' + color + '&nbsp</span> '
         }
         return result;
     }
 }
+
+
+// animate title
+
+let title = new MovingTitle("RANDOM-POSTER-GENERATOR-", 300, 8);
+title.init();
+
+
+function MovingTitle(writeText, interval, visibleLetters) {
+    let _instance = {};
+
+    let _currId = 0;
+    let _numberOfLetters = writeText.length;
+
+    function updateTitle() {
+        _currId += 1;
+        if(_currId > _numberOfLetters - 1) {
+            _currId = 0; 
+        }
+
+        let startId = _currId;
+        let endId = startId + visibleLetters;
+        let finalText;
+        if(endId < _numberOfLetters - 1) {
+            finalText = writeText.substring(startId, endId);
+        } else {
+            let cappedEndId = _numberOfLetters;
+            endId = endId - cappedEndId;
+
+            finalText = writeText.substring(startId, cappedEndId) +     writeText.substring(0, endId);
+        }
+
+        document.title = finalText; 
+    }
+
+    _instance.init = function() {
+        setInterval(updateTitle, interval);
+    };
+
+    return _instance;
+}
+
+// var rev = "fwd";
+// function titlebar(val) {
+//     var msg = "RANDOM POSTER GENERATOR ";
+//     var res = " ";
+//     var speed = 100;
+//     var pos = val;
+//     msg = "|-" + msg + "-|";
+//     var le = msg.length;
+//     if (rev == "fwd") {
+//         if (pos < le) {
+//             pos = pos + 1;
+//             scroll = msg.substr(0, pos);
+//             document.title = scroll;
+//             timer = window.setTimeout("titlebar(" + pos + ")", speed);
+//         }
+//         else {
+//             rev = "bwd";
+//             timer = window.setTimeout("titlebar(" + pos + ")", speed);
+//         }
+//     }
+//     else {
+//         if (pos > 0) {
+//             pos = pos - 1;
+//             var ale = le - pos;
+//             scrol = msg.substr(ale, le);
+//             document.title = scrol;
+//             timer = window.setTimeout("titlebar(" + pos + ")", speed);
+//         }
+//         else {
+//             rev = "fwd";
+//             timer = window.setTimeout("titlebar(" + pos + ")", speed);
+//         }
+//     }
+// }
+// titlebar(0);
