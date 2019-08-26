@@ -2,11 +2,11 @@
 let speed = 0;
 speed = 50 + (Math.floor(Math.random() * 3) * 10);
 const head = document.getElementById('head')
-head.innerHTML = '<marquee scrolldelay="' + speed + '" behavior="alternate" truespeed class="marquee-offset"><a href="/index.html">RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR RANDOM POSTERGENERATOR RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR</a></marquee>';
+head.innerHTML = '<marquee scrolldelay="' + speed + '" behavior="alternate" truespeed class="marquee-offset"><a href="/index.html">RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR</a></marquee>';
 
 speed = 50 + (Math.floor(Math.random() * 3) * 10);
 const foot = document.getElementById('foot')
-foot.innerHTML = '<marquee scrolldelay="' + speed + '" behavior="alternate" truespeed class="marquee-offset"><a href="/index.html">RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR RANDOM POSTERGENERATOR RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR</a></marquee>';
+foot.innerHTML = '<marquee scrolldelay="' + speed + '" behavior="alternate" truespeed class="marquee-offset"><a href="/index.html">RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR RANDOM POSTER GENERATOR</a></marquee>';
 
 
 
