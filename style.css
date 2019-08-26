@@ -252,12 +252,23 @@ classes: they describe the position in the grid by column and row number
 }
 
 .links-big {
+    font-family: 'suisse', sans-serif;
     text-transform: capitalize;
     font-size: 1.3rem;
+    color: #000;
+
+    font-style: normal;
+}
+
+.links-small{
+    /* background-color: #fff; */
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: #000;
 }
 
 #links-a, #links-b {
-    padding: 0 0.45rem 0 0.45rem;
+    padding: 0 1.45rem 0 1.45rem;
 }
 
 #links-a a, #links-b a {

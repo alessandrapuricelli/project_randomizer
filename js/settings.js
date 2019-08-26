@@ -381,12 +381,13 @@ function generate_links(topic) {
   for (const el of topic[topic_name]) {
     const topic_head = document.createElement('p');
     topic_head.setAttribute('class', 'links-big');
-    topic_head.innerText = el.name + '\ntext content:';
+    topic_head.innerText = el.name;
     if (idx === 0) link_a.appendChild(topic_head);
     else link_b.appendChild(topic_head);
 
     const topic_txt = document.createElement('p');
-    topic_txt.innerText = el.text_info;
+    topic_txt.setAttribute('class', 'links-small')
+    topic_txt.innerHTML = '<span class="links-big">Text content:</span> <br><br>' + el.text_info;
     if (idx === 0) link_a.appendChild(topic_txt);
     else link_b.appendChild(topic_txt);
 
